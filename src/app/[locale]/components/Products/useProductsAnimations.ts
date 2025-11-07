@@ -6,10 +6,6 @@ export function useProductsAnimations() {
     
     
     useGSAP(() => {
-        console.log('Products animation initialized');
-        console.log('Rows found:', gsap.utils.toArray('.row').length);
-        console.log('Cards left found:', document.querySelectorAll('.card-left').length);
-        console.log('Cards right found:', document.querySelectorAll('.card-right').length);
         const scrollTriggerSettings = {
             trigger: ".main",
             start: "top 25%",

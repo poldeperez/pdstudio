@@ -1,6 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { useSmoothScroll } from "./hooks/useSmoothScroll";
+import Intro from "./components/Intro/Intro"
 import Services from "./components/Services/Services"
 import Products from "./components/Products/Products"
 import styles from "./page.module.css"
@@ -13,14 +14,14 @@ export default function Home() {
 
   return (
       <div className="app" ref={container}>
-         <section className={styles.hero}>
-          
+        <section className={`hero ${styles.hero}`}>
+          <div className={styles.title}>
+              <h1>
+                  PDSTUDIO
+              </h1>
+          </div>
         </section>
-        <section className={styles.intro}>
-          <h1>
-            Creating standout brands and digital experiences that captivate audiences and drive meaningful connections.
-          </h1>
-        </section>
+        <Intro />
         <Services />
         <Products />
         <div style={{ height: '50vh'}}/>
