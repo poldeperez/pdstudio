@@ -9,12 +9,25 @@
 
 .hero {
   position: relative;
+  background-color: #a7e0ff;
   width: 100vw;
   height: 100vh;
   padding: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 2rem;
 }
 
-.intro,
+.title {
+    text-align: center;
+}
+
+.title h1 {
+    margin: 0;
+    font-size: clamp(4rem, 20vw, 12rem);
+}
+
 .outro {
   position: relative;
   width: 100vw;
@@ -25,19 +38,16 @@
   align-items: center;
 }
 
-.intro h1,
 .outro h1 {
   margin-bottom: 0;
 }
 
 /* Responsive */
 @media (max-width: 900px) {
-  .intro,
   .outro {
     padding: 1.5em;
   }
 
-  .intro h1,
   .outro h1 {
     font-size: 2.5rem;
   }
