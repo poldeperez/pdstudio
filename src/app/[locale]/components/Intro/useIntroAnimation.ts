@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import { gsap, useGSAP, ScrollTrigger } from "@/utils/gsap";
+import { useGSAP, ScrollTrigger } from "@/utils/gsap";
 
 export function useIntroAnimation() {
     const containerRef = useRef<HTMLDivElement>(null);

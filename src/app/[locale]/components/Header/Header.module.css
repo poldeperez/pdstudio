@@ -1,0 +1,163 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    background: transparent;
+    z-index: 100;
+    transition: background-color 0.3s ease;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.companyName {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    font-weight: 600;
+    color: #000;
+    white-space: nowrap;
+    transform-style: preserve-3d;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.navContainer {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+}
+
+.navLinks {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.navLink {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #000;
+    text-decoration: none;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+}
+
+.navLink:hover {
+    opacity: 0.6;
+}
+
+/* ✅ Wrapper for positioning */
+.menuWrapper {
+    position: relative;
+}
+
+/* ✅ Button that morphs */
+.menuButton {
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    min-width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    border-radius: 8px;
+    position: relative;
+    opacity: 0;
+    transform: scale(0);
+    padding: 0.75rem;
+    transition: min-width 0.4s ease, padding 0.4s ease;
+    overflow: hidden;
+}
+
+/* ✅ Burger icon (3 lines) */
+.burgerIcon {
+    font-size: 1.5rem;
+    display: block;
+    flex-shrink: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* ✅ Hover menu links (hidden by default) */
+.hoverMenuLinks {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    opacity: 0;
+    max-width: 0;
+    overflow: hidden;
+    transition: opacity 0.3s ease, max-width 0.4s ease;
+}
+
+.hoverMenuLink {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #fff;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+}
+
+.hoverMenuLink:hover {
+    opacity: 0.6;
+}
+
+/* ✅ On hover: expand button and show links */
+.menuButton:hover {
+    min-width: 280px; /* Expands to fit links */
+    padding: 0.75rem 1.5rem;
+}
+
+.menuButton:hover .burgerIcon {
+    opacity: 0; /* Fade out burger icon */
+}
+
+.menuButton:hover .hoverMenuLinks {
+    opacity: 1; /* Fade in links */
+    max-width: 300px; /* Allow links to show */
+}
+
+@media (max-width: 900px) {
+    .header {
+        padding: 0 1.5rem;
+        height: 70px;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .companyName {
+        font-size: 1rem;
+    }
+
+    .navLinks {
+        display: none;
+    }
+    
+    .menuButton {
+        min-width: 40px;
+        height: 40px;
+    }
+
+    .menuButton:hover {
+        min-width: 40px; /* Don't expand on mobile */
+    }
+
+    .hoverMenuLinks {
+        display: none; /* Hide hover menu on mobile */
+    }
+}
