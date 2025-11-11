@@ -2,6 +2,7 @@
 import { useRef } from "react";
 import { useSmoothScroll } from "./hooks/useSmoothScroll";
 import Header from "./components/Header/Header"
+import Hero from "./components/Hero/Hero"
 import Intro from "./components/Intro/Intro"
 import Services from "./components/Services/Services"
 import Products from "./components/Products/Products"
@@ -17,13 +18,7 @@ export default function Home() {
       <> 
         <Header />
         <div className="app" ref={container}>
-          <section className={`hero ${styles.hero}`}>
-            <div className={styles.title}>
-                <h1>
-                    PDSTUDIO
-                </h1>
-            </div>
-          </section>
+          <Hero />
           <Intro />
           <Services />
           <Products />
