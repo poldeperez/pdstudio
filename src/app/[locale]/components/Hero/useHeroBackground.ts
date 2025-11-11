@@ -10,6 +10,13 @@ export function useHeroBackground() {
         const ctx = canvas.getContext('2d');
         if (!ctx) return;
 
+        const getColor = (variable: string) => {
+            return getComputedStyle(document.documentElement)
+                .getPropertyValue(variable)
+                .trim();
+        };
+        const colorPrimary = getColor('--color-primary');
+
         // Set canvas size
         const resizeCanvas = () => {
             canvas.width = window.innerWidth;
@@ -70,9 +77,9 @@ export function useHeroBackground() {
                     // Draw circle (stroke only, no fill)
                     ctx.beginPath();
                     ctx.arc(x, y, circleRadius, 0, Math.PI * 2);
-                    ctx.strokeStyle = 'rgba(0, 0, 0, 0.15)'; // ✅ Stroke instead of fill
-                    ctx.lineWidth = 1; // ✅ Stroke width
-                    ctx.stroke(); // ✅ Draw stroke instead of fill
+                    ctx.strokeStyle = `${colorPrimary}70`;
+                    ctx.lineWidth = 1; 
+                    ctx.stroke(); 
                 }
             }
 

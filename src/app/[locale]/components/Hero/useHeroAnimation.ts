@@ -12,6 +12,14 @@ export function useHeroAnimation() {
         // Split the text into individual letters
         const text = title.textContent || '';
         title.innerHTML = ''; // Clear original text
+
+        const getColor = (variable: string) => {
+            return getComputedStyle(document.documentElement)
+                .getPropertyValue(variable)
+                .trim();
+        };
+
+        const colorPrimary = getColor('--color-primary');
         
         // Create span for each letter
         text.split('').forEach((char) => {
@@ -24,7 +32,7 @@ export function useHeroAnimation() {
             span.addEventListener('mouseenter', () => {
                 gsap.to(span, {
                     color: 'transparent',
-                    webkitTextStroke: '1px #000', 
+                    webkitTextStroke: `1px ${colorPrimary}`, 
                     duration: 0.3,
                     ease: "sine.inOut"
                 });
@@ -32,7 +40,7 @@ export function useHeroAnimation() {
             
             span.addEventListener('mouseleave', () => {
                 gsap.to(span, {
-                    color: '#000', 
+                    color: `${colorPrimary}`, 
                     webkitTextStroke: '0px',
                     duration: 0.3,
                     ease: "sine.inOut"

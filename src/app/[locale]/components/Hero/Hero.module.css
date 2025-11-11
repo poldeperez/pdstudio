@@ -1,6 +1,6 @@
 .hero {
   position: relative;
-  background-color: #a7e0ff;
+  background-color: var(--color-background);
   width: 100vw;
   height: 100vh;
   padding: 0;
@@ -19,7 +19,7 @@
 .title h1 {
     margin: 0;
     font-size: clamp(4rem, 20vw, 12rem);
-    user-select: none; /* ✅ Prevent text selection when hovering */
+    user-select: none;
 }
 
 .title h1 span {
