@@ -10,11 +10,11 @@ export function useServicesAnimation() {
     // Pin intro during cards scroll
     ScrollTrigger.create({
       trigger: cardElements[0],
-      start: "top 35%",
+      start: "top 20%",
       endTrigger: cardElements[cardElements.length - 1],
       end: "top 30%",
       pin: ".services-intro",
-      pinSpacing: false
+      pinSpacing: false,
     });
 
     // Animate each card
@@ -23,16 +23,16 @@ export function useServicesAnimation() {
       const cardInner = card.querySelector<HTMLElement>(".card-inner");
 
       
-      //if (!isLastCard) {
-        ScrollTrigger.create({
-          trigger: card,
-          start: "top 35%",
-          endTrigger: ".services-outro",
-          end: "top 65%",
-          pin: true,
-          pinSpacing: false
-        });
-      //}
+      
+      ScrollTrigger.create({
+        trigger: card,
+        start: "top 20%",
+        endTrigger: ".services-outro",
+        end: "top 50%",
+        pin: true,
+        pinSpacing: false
+      });
+      
 
       if (cardInner) {
         gsap.to(cardInner, {
@@ -40,10 +40,11 @@ export function useServicesAnimation() {
           ease: "none",
           scrollTrigger: {
             trigger: card,
-            start: "top 35%",
+            start: "top 20%",
             endTrigger: ".services-outro",
-            end: "top 65%",
-            scrub: true
+            end: "top 45%",
+            scrub: true,
+            markers: true,
           }
         });
       }

@@ -59,7 +59,6 @@ export function useHeaderAnimation() {
                     start: `${viewportHeight - 50}px top`,
                     end: `${viewportHeight + 100}px top`, 
                     scrub: 1,
-                    markers: true,
                 }
             });
 

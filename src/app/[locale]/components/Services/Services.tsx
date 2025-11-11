@@ -51,7 +51,7 @@ export default function Services() {
     return (
       <section className={`services-section ${styles.servicesSection}`} ref={containerRef}>
       <div className={`services-intro ${styles.servicesIntro}`}>
-        <h2>What I Do</h2>
+        <h2>What WE Do</h2>
       </div>
 
         {cards.map((card, index) => (
