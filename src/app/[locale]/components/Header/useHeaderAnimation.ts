@@ -33,9 +33,9 @@ export function useHeaderAnimation() {
             opacity: 1,
             scale: 1,
             scrollTrigger: {
-                trigger: document.body,
-                start: "200px top",
-                end: "300px top",
+                trigger: ".intro",
+                start: "top top",
+                end: "top+=100 top",
                 scrub: 0.6,
             },
             ease: "back.out(3)" 
@@ -104,7 +104,7 @@ export function useHeaderAnimation() {
         return () => {
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
-    }, { scope: headerRef });
+    });
 
     return { headerRef, companyNameRef, navLinksRef, menuBgRef, hoverMenuRef };
 }

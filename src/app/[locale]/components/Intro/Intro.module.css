@@ -2,34 +2,28 @@
     position: relative;
     width: 100vw;
     min-height: 100vh;
-    background-color: var(--color-accent);
+    background-color: transparent;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 4rem 2rem;
-    z-index: 2;
-    will-change: transform;
+    z-index: 0; /* ✅ Behind 3D model */
 }
 
 .title {
-    max-width: 1200px;
-    text-align: center;
+    width: 100%;
+    padding: 0 10vw;
+    position: relative;
 }
 
 .title h1 {
-    font-size: clamp(2.5rem, 4vw, 5rem);
-    color: var(--color-text);
+    font-size: clamp(2rem, 5vw, 4rem);
     line-height: 1.2;
+    font-weight: 300;
     margin: 0;
+    color: var(--color-text);
 }
 
 @media (max-width: 900px) {
-    .main {
-        margin-top: -20vh;
-        padding: 3rem 1.5rem;
-    }
-    
-    .title h1 {
-        font-size: clamp(2rem, 6vw, 3.5rem);
+    .title {
+        padding: 0 5vw;
     }
 }

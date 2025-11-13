@@ -11,12 +11,12 @@ export default function Header() {
         <header className={styles.header} ref={headerRef}>
             {/* Logo - Left */}
             <div className={styles.logo}>
-                [ PD ]
+                [ ds ]
             </div>
 
             {/* Company Name - Center (animated) */}
             <div className={styles.companyName} ref={companyNameRef}>
-                PD Studio
+                dep studio
             </div>
 
             {/* Nav Menu - Right */}
