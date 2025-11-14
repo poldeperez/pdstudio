@@ -59,7 +59,7 @@ export default function Services() {
         ))}
 
       <div className={`services-outro ${styles.servicesOutro}`}>
-        <p>Ready to work?</p>
+        
       </div>
     </section>
   );

@@ -12,7 +12,7 @@
   align-items: flex-end;
   justify-content: start;
   background-color: var(--color-white);
-  z-index: 0; /* ✅ Behind 3D model */
+  z-index: 0;
 }
 
 .servicesIntro h2 {
@@ -26,7 +26,7 @@
 .card {
   position: relative;
   height: 25em;
-  z-index: 3; /* ✅ Above 3D model (which is z-index: 1) */
+  z-index: 3;
 }
 
 .cardInner {
@@ -72,18 +72,19 @@
 .card4 .cardInner {
   background-color: var(--color-black);
   color: var(--color-white);
+  height: 30em;
 }
 
 .servicesOutro {
   position: relative;
   width: 100vw;
-  height: 8em;
+  height: 1em;
   padding: 2em;
   display: flex;
   align-items: center;
   justify-content: center;
   background: none;
-  z-index: 0; /* ✅ Behind 3D model */
+  z-index: 0; 
 }
 
 /* Responsive */

@@ -5,6 +5,7 @@ import { Canvas, useThree, useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
 import { useGLTF } from '@react-three/drei';
 import { gsap, ScrollTrigger } from '@/utils/gsap';
+import { glsl } from 'three/tsl';
 
 function Model() {
   const { scene } = useGLTF('/josta.glb');
@@ -88,57 +89,11 @@ function Model() {
       }
     });
 
-    // Intro section trigger - animate when entering intro
-    const introTrigger = ScrollTrigger.create({
+    // Intro section trigger
+    const introEnterTrigger = ScrollTrigger.create({
       trigger: ".intro",
-      start: "top center", // When intro top hits center of viewport
-      end: "bottom center",
+      start: "top 65%",
       onEnter: () => {
-        console.log('Entering intro section');
-        // Move model to the side
-        gsap.to(model.position, {
-          x: 0, // Move 
-          y: 0,
-          duration: 1,
-          ease: "power2.out"
-        });
-        // scale down
-        gsap.to(model.scale, {
-          x: 0.7,
-          y: 0.7,
-          z: 0.7,
-          duration: 1,
-          ease: "power2.out"
-        });
-        stateRef.current.isFloating = false;
-      },
-      onLeave: () => {
-        console.log('Leaving intro section');
-        // Scale down when leaving intro
-        gsap.to(model.position, {
-          x: 10,
-          y: 0,
-          z: 0,
-          duration: 0.8,
-          ease: "power2.in"
-        });
-        gsap.to(model.scale, {
-          x: 0,
-          y: 0,
-          z: 0,
-          duration: 0.8,
-          ease: "power2.in"
-        });
-      },
-      onEnterBack: () => {
-        console.log('Entering back intro section');
-        // Return to intro position
-        gsap.to(model.position, {
-          x: 0,
-          y: 0,
-          duration: 1,
-          ease: "power2.out"
-        });
         gsap.to(model.scale, {
           x: 0.7,
           y: 0.7,
@@ -149,14 +104,6 @@ function Model() {
         stateRef.current.isFloating = false;
       },
       onLeaveBack: () => {
-        console.log('Leaving back intro section');
-        // Return to hero center position
-        gsap.to(model.position, {
-          x: 0,
-          y: 0,
-          duration: 1,
-          ease: "power2.out"
-        });
         gsap.to(model.scale, {
           x: 1,
           y: 1,
@@ -167,6 +114,83 @@ function Model() {
         stateRef.current.isFloating = true;
       }
     });
+
+    const stickySection = document.querySelector(".modelContainer") as HTMLElement;
+
+if (stickySection) {
+  // ✅ Create timeline for all three phases
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".modelContainer",
+      start: "top 20%",
+      end: "+=600vh", // Total scroll distance for all 3 phases (150 + 200 + 150)
+      scrub: 1,
+      markers: false,
+    }
+  });
+
+  // ✅ Phase 1: Move model to left (0-150vh)
+  tl.to(model.position, {
+    x: -4,
+    y: 0,
+    ease: "none",
+    duration: 150, // Proportional duration
+  });
+
+  // ✅ Phase 2: Rotate model 360° (automatically starts after phase 1)
+  tl.to(model.rotation, {
+    y: Math.PI * 2, // Full rotation
+    ease: "none",
+    duration: 300, // Proportional duration
+  }); // No position parameter = starts after previous animation
+
+  // ✅ Phase 3: Move up (automatically starts after phase 2)
+  tl.to(model.position, {
+    y: 3, // Move up
+    ease: "none",
+    duration: 150, // Proportional duration
+  });
+
+  // ✅ Phase 3b: Fade out (starts at same time as move up using "<")
+  tl.to(model.scale, {
+    x: 0,
+    y: 0,
+    z: 0,
+    ease: "power2.in",
+    duration: 150, // Same duration as move up
+  }, "<"); // "<" means start at the same time as the previous animation
+
+  // ✅ Handle scrolling back
+  ScrollTrigger.create({
+    trigger: ".modelContainer",
+    start: "top 20%",
+    onLeaveBack: () => {
+      // Reset all transformations when scrolling back up
+      gsap.to(model.position, {
+        x: 0,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out"
+      });
+      gsap.to(model.rotation, {
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out"
+      });
+      gsap.to(model.scale, {
+        x: 0.7,
+        y: 0.7,
+        z: 0.7,
+        duration: 0.8,
+        ease: "power2.out"
+      });
+    }
+  });
+
+} else {
+  console.warn("modelContainer not found");
+}
+
     
     // Track mouse movement
     const handleMouseMove = (e: MouseEvent) => {
@@ -185,7 +209,7 @@ function Model() {
     // Cleanup
     return () => {
       heroTrigger.kill();
-      introTrigger.kill();
+      introEnterTrigger.kill();
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('scroll', handleScroll);
     };
@@ -202,6 +226,12 @@ function Model() {
     if (isFloating) {
       const floatOffset = Math.sin(Date.now() * 0.001 * floatSpeed) * floatAmplitude;
       model.position.y = floatOffset;
+
+      // Cursor follow - smooth rotation based on mouse
+      const targetRotationY = mouseX * 0.3;
+      const targetRotationX = -mouseY * 0.3;
+      model.rotation.y += (targetRotationY - model.rotation.y) * 0.05;
+      model.rotation.x += (targetRotationX - model.rotation.x) * 0.05;
     }
 
     // Scroll-based rotation
@@ -212,13 +242,6 @@ function Model() {
       model.rotation.y += 0.001 * rotationSpeed;
     }
 
-    // Cursor follow - smooth rotation based on mouse
-    const targetRotationY = mouseX * 0.3; // Adjust intensity (0.3 = subtle)
-    const targetRotationX = -mouseY * 0.3;
-    
-    // Lerp (smooth interpolation) to target rotation
-    model.rotation.y += (targetRotationY - model.rotation.y) * 0.05;
-    model.rotation.x += (targetRotationX - model.rotation.x) * 0.05;
   });
 
   return <primitive ref={modelRef} object={scene} />;
@@ -229,11 +252,12 @@ export default function Hero3D() {
     <div 
       className="model"
       style={{ 
-        position: 'fixed', //fixed so it spans sections
-        top: 0, 
+        position: 'fixed',
+        top: '50%', // ✅ Center vertically
         left: 0, 
         width: '100%', 
         height: '100vh',
+        transform: 'translateY(-50%)', // ✅ Perfect vertical centering
         zIndex: 1,
         pointerEvents: 'none'
       }}
@@ -252,7 +276,7 @@ export default function Hero3D() {
           toneMappingExposure: 2.5,
         }}
         shadows="soft"
-        style={{ background: 'transparent' }} // Transparent to see sections behind
+        style={{ background: 'transparent' }}
       >
         <Suspense fallback={null}>
           <ambientLight intensity={0.5} />

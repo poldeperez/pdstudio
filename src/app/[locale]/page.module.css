@@ -7,21 +7,6 @@
   align-items: center;
 }
 
-
-.outro {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  padding: 2em;
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-}
-
-.outro h1 {
-  margin-bottom: 0;
-}
-
 /* Responsive */
 @media (max-width: 900px) {
   .outro {
