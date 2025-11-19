@@ -12,10 +12,10 @@ export default function Products() {
         rows.push(
             <div className={`row ${styles.row}`} key={i}>
                 <div className={`card-left ${styles.card}`}>
-                    <img src={`/assets/card-${2 * i - 1}.jpg`} alt={`Card ${2 * i - 1}`} />
+                    <img src={`/assets/product-${2 * i - 1}.jpg`} alt={`Product ${2 * i - 1}`} />
                 </div>
                 <div className={`card-right ${styles.card}`}>
-                    <img src={`/assets/card-${2 * i}.jpg`} alt={`Card ${2 * i}`} />
+                    <img src={`/assets/product-${2 * i}.jpg`} alt={`Product ${2 * i}`} />
                 </div>
             </div>
         )
@@ -44,9 +44,6 @@ export default function Products() {
                 </div>
             </div>
             {generateRows()}
-            <section className={styles.footer}>
-                <Link href="/">Join our revolution</Link>
-            </section>
         </section>
     );
 }

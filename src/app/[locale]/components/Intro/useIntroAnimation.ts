@@ -91,8 +91,8 @@ export function useIntroAnimation() {
       // ✅ Phase 2 & 3: Keep text pinned during rotation 
       ScrollTrigger.create({
         trigger: ".modelContainer",
-        start: "top+=150vh top",
-        end: "+=150vh", // ✅ Updated: Pin for phase 2 (200vh) and phase 3
+        start: "top+=40vh top",
+        end: "+=290vh", // ✅ Updated: Pin for phase 2 (200vh) and phase 3
         pin: modelTextRef.current,
         pinSpacing: false,
         markers: false,

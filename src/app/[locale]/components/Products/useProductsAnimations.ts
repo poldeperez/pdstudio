@@ -7,8 +7,8 @@ export function useProductsAnimations() {
     
     useGSAP(() => {
         const scrollTriggerSettings = {
-            trigger: ".main",
-            start: "top 25%",
+            trigger: ".logo",
+            start: "top 55%",
             toggleActions: "play reverse play reverse" as const,
             pinSpacing: true
         };
@@ -42,13 +42,14 @@ export function useProductsAnimations() {
             }
         });
 
+        
         gsap.to(".logo", {
             scale: 1,
             duration: 0.5,
             ease: "power1.out",
             scrollTrigger: scrollTriggerSettings,
         });
-
+        
         gsap.to(".line p", {
             y: 0,
             stagger: 0.1,

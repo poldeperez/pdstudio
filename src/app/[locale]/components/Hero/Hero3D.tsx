@@ -8,7 +8,7 @@ import { gsap, ScrollTrigger } from '@/utils/gsap';
 import { glsl } from 'three/tsl';
 
 function Model() {
-  const { scene } = useGLTF('/josta.glb');
+  const { scene } = useGLTF('/logo.glb');
   const modelRef = useRef<THREE.Group>(null);
   const { camera } = useThree();
   
@@ -35,7 +35,7 @@ function Model() {
         const mesh = node as THREE.Mesh;
         if (mesh.material) {
           const material = mesh.material as THREE.MeshStandardMaterial;
-          material.metalness = 0.3;
+          material.metalness = 0.7;
           material.roughness = 0.4;
           material.envMapIntensity = 1.5;
         }
@@ -123,7 +123,7 @@ if (stickySection) {
     scrollTrigger: {
       trigger: ".modelContainer",
       start: "top 20%",
-      end: "+=600vh", // Total scroll distance for all 3 phases (150 + 200 + 150)
+      end: "+=750vh", // Total scroll distance for all 3 phases (150 + 300 + 300)
       scrub: 1,
       markers: false,
     }
@@ -131,7 +131,7 @@ if (stickySection) {
 
   // ✅ Phase 1: Move model to left (0-150vh)
   tl.to(model.position, {
-    x: -4,
+    x: -1.75,
     y: 0,
     ease: "none",
     duration: 150, // Proportional duration
@@ -146,19 +146,16 @@ if (stickySection) {
 
   // ✅ Phase 3: Move up (automatically starts after phase 2)
   tl.to(model.position, {
-    y: 3, // Move up
+    y: 6, // Move up
     ease: "none",
-    duration: 150, // Proportional duration
+    duration: 300, // Proportional duration
   });
-
-  // ✅ Phase 3b: Fade out (starts at same time as move up using "<")
   tl.to(model.scale, {
-    x: 0,
-    y: 0,
-    z: 0,
-    ease: "power2.in",
-    duration: 150, // Same duration as move up
-  }, "<"); // "<" means start at the same time as the previous animation
+    scale: 0.8,
+    opacity: 0,
+    ease: "none",
+    duration: 300, // Proportional duration
+  }, "<");
 
   // ✅ Handle scrolling back
   ScrollTrigger.create({
@@ -279,8 +276,22 @@ export default function Hero3D() {
         style={{ background: 'transparent' }}
       >
         <Suspense fallback={null}>
-          <ambientLight intensity={0.5} />
-          <pointLight position={[10, 10, 10]} castShadow />
+          <ambientLight intensity={0.7} />
+          <directionalLight
+            position={[5, 10, 7]}
+            intensity={1.2}
+            castShadow
+            shadow-mapSize-width={1024}
+            shadow-mapSize-height={1024}
+            shadow-bias={-0.0001}
+            color={0xffffff}
+          />
+          {/* Fill light for softer shadows */}
+          <pointLight
+            position={[-5, -5, 5]}
+            intensity={0.5}
+            color={0xffffff}
+          />
           <Model />
         </Suspense>
       </Canvas>
@@ -288,4 +299,4 @@ export default function Hero3D() {
   );
 }
 
-useGLTF.preload('/josta.glb');
+useGLTF.preload('/logo.glb');

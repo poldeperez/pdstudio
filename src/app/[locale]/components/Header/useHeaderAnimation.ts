@@ -1,110 +1,152 @@
 import { useRef } from 'react';
 import { gsap, useGSAP, ScrollTrigger } from "@/utils/gsap";
+import { usePathname } from '@/i18n/navigation';
 
 export function useHeaderAnimation() {
     const headerRef = useRef<HTMLDivElement>(null);
-    const companyNameRef = useRef<HTMLDivElement>(null);
-    const navLinksRef = useRef<HTMLDivElement>(null);
+    const companyNameRef = useRef<HTMLAnchorElement>(null);
     const menuBgRef = useRef<HTMLButtonElement>(null);
-    const hoverMenuRef = useRef<HTMLDivElement>(null);
+    const pathname = usePathname();
     
     useGSAP(() => {
         const companyName = companyNameRef.current;
-        const navLinks = navLinksRef.current;
         const menuBg = menuBgRef.current;
-        const hoverMenu = hoverMenuRef.current;
         
         if (!companyName) return;
 
-        // Set initial state - hidden above
-        gsap.set(companyName, {
-            y: -20,
-            rotationX: -90,
-            opacity: 0,
-            scale: 0.9,
-            visibility: 'visible',
-            transformPerspective: 1000,
-        });
+        const isHomePage = pathname === '/' || pathname === '';
 
-        // Animate in on scroll
-        gsap.to(companyName, {
-            y: 0,
-            rotationX: 0,
-            opacity: 1,
-            scale: 1,
-            scrollTrigger: {
-                trigger: ".intro",
-                start: "top top",
-                end: "top+=100 top",
-                scrub: 0.6,
-            },
-            ease: "back.out(3)" 
-        });
-
-        // Animate nav links hiding into hamburger
-        if (navLinks && menuBg) {
-            const links = navLinks.querySelectorAll('a');
-            const viewportHeight = window.innerHeight;
-            
-            // Set initial state for menu button
-            gsap.set(menuBg, {
-                scale: 0,
+        if (isHomePage) {
+            // ✅ Home page: Scroll-triggered animation
+            gsap.set(companyName, {
+                y: -20,
+                rotationX: -90,
                 opacity: 0,
+                scale: 0.9,
+                visibility: 'visible',
+                transformPerspective: 1000,
             });
-            
-            // Create timeline for the two-step animation
-            const hideTimeline = gsap.timeline({
-                scrollTrigger: {
-                    trigger: document.body,
-                    start: `${viewportHeight - 50}px top`,
-                    end: `${viewportHeight + 100}px top`, 
-                    scrub: 1,
-                }
-            });
-
-            // Step 1: Slide left a bit (fake out)
-            hideTimeline.to(links, {
-                x: -10,
-                opacity: 0.7,
-                duration: 0.3,
-                stagger: 0.05,
-            });
-
-            // Step 2a: Button appears and expands
-            hideTimeline.to(menuBg, {
-                scale: 1.25,
+            gsap.to(companyName, {
+                y: 0,
+                rotationX: 0,
                 opacity: 1,
-                duration: 1,
-                ease: "power2.out"
-            }, "slideIn");
-
-            // Step 2b: Slide links to same position
-            hideTimeline.to(links, {
-                x: (index) => {
-                    const distances = [160, 110, 60];
-                    return distances[index];
-                },
-                opacity: 0,
-                duration: 1,
-                stagger: {
-                    each: 0.08,
-                    from: "start"
-                },
-                ease: "power2.in"
-            }, "slideIn");
-
-            // Step 3: Shrink to final size
-            hideTimeline.to(menuBg, {
                 scale: 1,
-                duration: 0.3,
-                ease: "back.out(1.3)" 
-            }, "+=0.1");
+                scrollTrigger: {
+                    trigger: ".intro",
+                    start: "top top",
+                    end: "top+=100 top",
+                    scrub: 0.6,
+                },
+                ease: "back.out(3)" 
+            });
+        } else {
+            // ✅ Other pages: Simple fade-in on load
+            gsap.fromTo(companyName, 
+                {
+                    y: -10,
+                    opacity: 0,
+                    visibility: 'visible',
+                },
+                {
+                    y: 0,
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    delay: 0.3
+                }
+            );
+        }
+
+        // Animate nav links into hamburger
+        if (menuBg) {
+            const lines = menuBg.querySelectorAll('.line');
+            
+            // ✅ Entrance animation timeline
+            const t = gsap.timeline();
+            
+            t.fromTo(menuBg, 
+                {
+                    scale: 0,
+                    opacity: 0,
+                },
+                {
+                    scale: 1.1,
+                    opacity: 1,
+                    duration: 0.8,
+                    ease: "power2.out",
+                    delay: 0.5,
+                }
+            )
+            .to(menuBg, {
+                scale: 1,
+                duration: 0.2,
+                ease: "back.out(1.3)"
+            })
+            .fromTo(lines,
+                {
+                    scaleX: 0,
+                    x: (index) => index === 0 ? -20 : 20,
+                    transformOrigin: "center center",
+                    opacity: 0
+                },
+                {
+                    scaleX: 1,
+                    x: 0,
+                    opacity: 1,
+                    duration: 0.6,
+                    ease: "back.out(2)",
+                    stagger: 0.1
+                }
+            );
+
+            // ✅ Hover animations with animation killing
+            menuBg.addEventListener('mouseenter', () => {
+                gsap.killTweensOf(menuBg);
+                gsap.killTweensOf(lines);
+                
+                gsap.to(menuBg, {
+                    width: 420,
+                    paddingLeft: 24,
+                    paddingRight: 24,
+                    duration: 0.4,
+                    ease: "power2.out"
+                });
+
+                gsap.to(lines, {
+                    opacity: 0,
+                    scaleX: 0,
+                    duration: 0.1,
+                    ease: "power2.in"
+                });
+            });
+
+            menuBg.addEventListener('mouseleave', () => {
+                gsap.killTweensOf(menuBg);
+                gsap.killTweensOf(lines);
+                
+                gsap.to(menuBg, {
+                    width: 45,
+                    paddingLeft: 0,
+                    paddingRight: 0,
+                    duration: 0.4,
+                    ease: "power2.in"
+                });
+
+                gsap.to(lines, {
+                    opacity: 1,
+                    scaleX: 1,
+                    duration: 0.4,
+                    ease: "back.out(1.5)",
+                    stagger: 0.06,
+                    delay: 0.5
+                });
+            });
         }
 
         return () => {
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
         };
-    });
+    }, [pathname]); // ✅ Add pathname as dependency
 
-    return { headerRef, companyNameRef, navLinksRef, menuBgRef, hoverMenuRef };
+    return { headerRef, companyNameRef, menuBgRef };
 }

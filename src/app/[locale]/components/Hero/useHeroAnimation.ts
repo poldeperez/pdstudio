@@ -16,7 +16,10 @@ export function useHeroAnimation() {
                 .trim();
         };
 
-        const colorPrimary = getColor('--color-primary');
+        const colorText = getColor('--color-black');
+        
+        // ✅ Full gradient
+        const gradient = 'linear-gradient(90deg, #070664 0%, #0A1CFF 35%, #1474F8 70%, #32E27F 100%)';
         
         // Use SplitText to split into characters
         const split = new SplitText(title, { 
@@ -24,23 +27,43 @@ export function useHeroAnimation() {
             charsClass: "hero-letter"
         });
         
+        // ✅ Store the original text content for gradient calculation
+        const fullText = title.textContent || '';
+        
         // Add hover effect to each character
-        split.chars.forEach((char) => {
-            (char as HTMLElement).style.cursor = 'pointer';
+        split.chars.forEach((char, index) => {
+            const element = char as HTMLElement;
+            element.style.cursor = 'pointer';
+            element.style.display = 'inline-block';
             
-            char.addEventListener('mouseenter', () => {
-                gsap.to(char, {
-                    color: 'transparent',
-                    webkitTextStroke: `1px ${colorPrimary}`, 
+            // ✅ Step 1: Start with solid color
+            element.style.color = colorText;
+            
+            element.addEventListener('mouseenter', () => {
+                // ✅ Step 2: Add transparency on hover
+                gsap.to(element, {
+                    opacity: 0.6,
                     duration: 0.3,
                     ease: "sine.inOut"
                 });
             });
             
-            char.addEventListener('mouseleave', () => {
-                gsap.to(char, {
-                    color: colorPrimary, 
-                    webkitTextStroke: '0px',
+            element.addEventListener('mouseleave', () => {
+                // ✅ Step 3: Apply gradient positioned for this specific letter
+                const position = (index / split.chars.length) * 100;
+                
+                element.style.background = gradient;
+                element.style.backgroundClip = 'text';
+                element.style.setProperty('-webkit-background-clip', 'text');
+                element.style.setProperty('-webkit-text-fill-color', 'transparent');
+                element.style.color = 'transparent';
+                
+                // ✅ Position the gradient so it appears continuous across all letters
+                element.style.backgroundSize = `${split.chars.length * 100}% 100%`;
+                element.style.backgroundPosition = `${position}% 0`;
+                
+                gsap.to(element, {
+                    opacity: 1,
                     duration: 0.3,
                     ease: "sine.inOut"
                 });
@@ -48,7 +71,6 @@ export function useHeroAnimation() {
         });
 
         return () => {
-            // Cleanup - reverts DOM to original state
             split.revert();
         };
     }, { scope: titleRef });

@@ -10,7 +10,7 @@ export default function Hero() {
             <Hero3D />
             <div className={styles.title}>
                 <h1 ref={titleRef}>
-                    dep studio
+                    dz node
                 </h1>
             </div>
         </section>

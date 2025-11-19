@@ -32,7 +32,7 @@ export function useServicesAnimation() {
         ease: "back.out(1)",
         scrollTrigger: {
           trigger: '.services-intro',
-          start: 'top 80%',
+          start: 'top 70%',
           toggleActions: 'play none none none'
         }
       });
@@ -51,6 +51,8 @@ export function useServicesAnimation() {
     // Animate each card
     cardElements.forEach((card, index) => {
       const cardInner = card.querySelector<HTMLElement>(".card-inner");
+      const cardImg = card.querySelector<HTMLElement>(".cardImg"); // ✅ Get the image container
+      const cardTitle = card.querySelector<HTMLElement>(".cardContent h1"); // ✅ Select the h1
 
       ScrollTrigger.create({
         trigger: card,
@@ -73,6 +75,44 @@ export function useServicesAnimation() {
             scrub: true,
           }
         });
+      }
+
+      // ✅ Animate image sliding in from right and fading in
+      if (cardImg) {
+        gsap.fromTo(
+          cardImg,
+          { x: 80, opacity: 0 },
+          {
+            x: 0,
+            opacity: 1,
+            duration: 0.8,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 80%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      }
+
+      // ✅ Animate h1: slide up and fade in
+      if (cardTitle) {
+        gsap.fromTo(
+          cardTitle,
+          { y: 40, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.7,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 60%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
       }
     });
 

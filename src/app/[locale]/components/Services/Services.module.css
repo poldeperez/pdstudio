@@ -11,7 +11,7 @@
   display: flex;
   align-items: flex-end;
   justify-content: start;
-  background-color: var(--color-white);
+  background-color: transparent;
   z-index: 0;
 }
 
@@ -42,37 +42,55 @@
 
 .cardContent {
   flex: 3;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between; /* ✅ Title at top, columns at bottom */
 }
 
 .cardContent h1 {
   font-size: clamp(2.5rem, 6vw, 7rem);
   margin-bottom: 1em;
+  font-weight: 400;
+  /* No need for extra margin-top */
 }
 
 .cardImg {
-  flex: 1;
-  aspect-ratio: 16/9;
-  border-radius: 0.75em;
+  flex: 0 0 auto;
+  width: 32%;
+  aspect-ratio: 4/3;
+  max-height: 300px;
   overflow: hidden;
+  border-radius: 8px;
+  align-self: center;
+}
+
+.cardImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center;
+  transition: transform 0.4s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
 
 /* Card color variants */
 .card1 .cardInner {
-  background-color: #4E7C76;
+  background: linear-gradient(90deg, #93bbfa 0%, #9fddd4 100%);
 }
 
 .card2 .cardInner {
-  background-color: var(--color-white);
+  background: linear-gradient(90deg, #cccfff 0%, #ffffff 100%);
 }
 
 .card3 .cardInner {
-  background-color: var(--color-primary);
+  background: linear-gradient(90deg, #a4e9c8 0%, #bcf3cf 100%);
 }
 
 .card4 .cardInner {
-  background-color: var(--color-black);
+  background: linear-gradient(90deg, #0e1212 0%, #181e1e 100%);
   color: var(--color-white);
-  height: 30em;
+  height: 32em;
+  padding-bottom: 100px; 
 }
 
 .servicesOutro {
@@ -85,6 +103,36 @@
   justify-content: center;
   background: none;
   z-index: 0; 
+}
+
+.cardColumns {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.cardColumns p {
+  flex: 1;
+  margin: 0;
+}
+
+.cardQualities {
+  flex: 1;
+  margin: 0;
+  padding-left: 1.5rem;
+  list-style: none;
+  color: var(--color-text, #222);
+  font-size: 1rem;
+  opacity: 0.85;
+}
+.card4 .cardQualities {
+  color: var(--color-white);
+}
+
+/* Hover effect for card images */
+.card:hover .cardImg img {
+  transform: scale(1.04);
+  transition: transform 0.4s cubic-bezier(0.4, 0.2, 0.2, 1);
 }
 
 /* Responsive */

@@ -8,7 +8,6 @@ import Services from "./components/Services/Services";
 import Products from "./components/Products/Products";
 import CircleBackground from "./components/CircleBackground/CircleBackground";
 import Outro from "./components/Outro/Outro";
-import Footer from "./components/Footer/Footer";
 import styles from "./page.module.css";
 
 export default function Home() {
@@ -17,19 +16,17 @@ export default function Home() {
   useSmoothScroll();
 
   return (
-    <div className="app" ref={container}>
+    <div className="app" ref={container}>      
       <Header />
-      
       {/* Hero + Intro section with background */}
       <div style={{ position: "relative" }}>
-        <CircleBackground />
+        {/*<CircleBackground /> */}
         <Hero />
         <Intro />
       </div>
       <Services />      
       <Outro /> 
       <Products />
-      <Footer />
     </div>
   );
 }
