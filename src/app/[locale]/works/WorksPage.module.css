@@ -1,0 +1,116 @@
+.worksSection {
+  width: 100%;
+  min-height: 100vh;
+  background: #f8fafc;
+  padding: 0 0 4em 0;
+}
+
+.worksIntro {
+  width: 100%;
+  padding: 4em 0 4em 0;
+  text-align: center;
+  background: var(--color-black-linear);
+}
+
+.worksIntro h2 {
+  font-size: clamp(3rem, 7rem, 10rem);
+  margin-bottom: 0.7em;
+  font-weight: 700;
+  color: var(--color-white);
+  transform: scaleY(1.15);
+  letter-spacing: 0.02em;
+}
+
+.worksIntro p {
+  font-size: clamp(1.2rem, 1.5rem, 1.8rem);
+  font-weight: 300;
+  color: var(--color-white);
+  opacity: 0.75;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0; /* No gaps between items */
+  max-width: 1600px;
+  margin: 0 auto 4em auto;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+.projectCard {
+  position: relative;
+  min-height: 320px;
+  height: 28vw; /* Responsive height */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 0;
+  transition: transform 0.2s;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.projectCard::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(24,30,30,0.0) 0%, rgba(24,30,30,0.0) 100%);
+  z-index: 1;
+  transition: background 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Slower and smoother */
+}
+
+.projectCard:hover::before,
+.projectCard:focus::before {
+  background: linear-gradient(0deg, rgba(24,30,30,0.45) 0%, rgba(24,30,30,0.15) 100%);
+}
+
+.projectTitle {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 2em 0 2em 2em;
+  text-shadow: 0 4px 24px rgba(0,0,0,0.25);
+  letter-spacing: 0.01em;
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1); /* Slower and smoother */
+  pointer-events: none;
+}
+
+.projectCard:hover .projectTitle,
+.projectCard:focus .projectTitle {
+  opacity: 1;
+}
+
+@media (max-width: 1100px) {
+  .projectsGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .projectCard {
+    height: 36vw;
+    min-height: 200px;
+  }
+  .projectTitle {
+    font-size: 1.3rem;
+    margin: 1.2em 0 1.2em 1.2em;
+  }
+}
+@media (max-width: 700px) {
+  .projectsGrid {
+    grid-template-columns: 1fr;
+  }
+  .projectCard {
+    height: 48vw;
+    min-height: 160px;
+  }
+}

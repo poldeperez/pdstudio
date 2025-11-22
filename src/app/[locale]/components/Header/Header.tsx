@@ -38,7 +38,8 @@ export default function Header() {
                     <div className={`menuContent ${styles.menuContent}`}>
                         {/* Navigation Links */}
                         <div className={`hoverMenuLinks ${styles.hoverMenuLinks}`}>
-                            <Link href="/" className={`hoverMenuLink ${styles.hoverMenuLink}`}>SERVICES</Link>
+                            <Link href="/services" className={`hoverMenuLink ${styles.hoverMenuLink}`}>SERVICES</Link>
+                            <Link href="/works" className={`hoverMenuLink ${styles.hoverMenuLink}`}>WORKS</Link>
                             <Link href="/contact" className={`hoverMenuLink ${styles.hoverMenuLink}`}>CONTACT</Link>
                         </div>
                         

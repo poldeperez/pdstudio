@@ -9,8 +9,10 @@ export function useProductsAnimations() {
         const scrollTriggerSettings = {
             trigger: ".logo",
             start: "top 55%",
-            toggleActions: "play reverse play reverse" as const,
-            pinSpacing: true
+            endTrigger: ".btn",
+            end: "top 20%",
+            toggleActions: "play reverse play reverse",
+            pinSpacing: true,
         };
 
         const leftXValues = [-800, -900, -400];
@@ -45,6 +47,7 @@ export function useProductsAnimations() {
         
         gsap.to(".logo", {
             scale: 1,
+            opacity: 1,
             duration: 0.5,
             ease: "power1.out",
             scrollTrigger: scrollTriggerSettings,

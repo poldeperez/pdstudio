@@ -105,7 +105,7 @@ export function useHeaderAnimation() {
                 gsap.killTweensOf(lines);
                 
                 gsap.to(menuBg, {
-                    width: 420,
+                    width: 450,
                     paddingLeft: 24,
                     paddingRight: 24,
                     duration: 0.4,

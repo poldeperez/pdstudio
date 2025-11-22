@@ -6,6 +6,7 @@
   --color-secondary: #FABAA9;
   --color-secondary-dark: #E58A74;
   --color-secondary-light: #FFD9CE;
+  --color-black-linear: linear-gradient(90deg, #0e1212 0%, #181e1e 100%);
   
   /* Neutral colors */
   --color-black: #0F1F1E;
@@ -39,8 +40,17 @@
   box-sizing: border-box;
 }
 
+html {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
 body {
   font-family: var(--font-haffer), sans-serif;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 img {

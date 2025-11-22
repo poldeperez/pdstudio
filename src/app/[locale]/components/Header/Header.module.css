@@ -37,7 +37,7 @@
 }
 
 .companyName:hover {
-    opacity: 0.8; /* ✅ Optional hover effect */
+    opacity: 0.8;
 }
 
 /* Wrapper for positioning */
@@ -50,16 +50,16 @@
     border: none;
     cursor: pointer;
     color: var(--color-white);
-    width: 45;
+    width: 45px;
     height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: linear-gradient(90deg, 
-        #11107c 0%,
-        #0A1CFF 35%,
-        #1474F8 70%,
-        #32E27F 100%
+        #161479e3 0%,
+        #1a27ddd3 35%,
+        #2574e2e4 70%,
+        #3fa86cdd 100%
     );
     border-radius: 8px;
     position: relative;
@@ -89,6 +89,7 @@
 }
 
 .menuContent {
+    flex: 1 1 auto;
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -101,7 +102,7 @@
 
 .menuButton:hover .menuContent {
     opacity: 1;
-    max-width: 400px;
+    max-width: 700px;
 }
 
 .hoverMenuLinks {

@@ -250,13 +250,14 @@ export default function Hero3D() {
       className="model"
       style={{ 
         position: 'fixed',
-        top: '50%', // ✅ Center vertically
+        top: '50%',
         left: 0, 
-        width: '100%', 
+        width: "100%",
         height: '100vh',
-        transform: 'translateY(-50%)', // ✅ Perfect vertical centering
+        transform: 'translateY(-50%)',
         zIndex: 1,
-        pointerEvents: 'none'
+        pointerEvents: 'none',
+        overflow: 'hidden'
       }}
     >
       <Canvas

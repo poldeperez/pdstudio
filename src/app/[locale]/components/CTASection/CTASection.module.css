@@ -1,0 +1,32 @@
+.ctaSection {
+  text-align: center;
+  margin-top: 4em;
+}
+
+.ctaSection h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5em;
+  color: #181e1e;
+}
+
+.ctaSection p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5em;
+  color: #444;
+}
+
+.ctaButton {
+  display: inline-block;
+  background: linear-gradient(90deg, #93bbfa 0%, #9fddd4 100%);
+  color: #181e1e;
+  font-weight: 600;
+  padding: 0.9em 2.2em;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: background 0.2s;
+}
+
+.ctaButton:hover {
+  background: linear-gradient(90deg, #9fddd4 0%, #93bbfa 100%);
+}

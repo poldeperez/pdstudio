@@ -26,21 +26,21 @@ export default function Products() {
         <section className={`main ${styles.main}`} ref={containerRef}>
             <div className={`mainContent ${styles.mainContent}`}>
                 <div className={`logo ${styles.logo}`}>
-                    <img src="/assets/card-1.jpg" alt="Logo" />
+                    <img src="/logo.svg" alt="Logo" />
                 </div>
                 <div className={styles.copy}>
                     <div className={`line ${styles.line}`}>
-                        <p>Delve into coding without clutter</p>
+                        <p>Our work Our work our work</p>
                     </div>
                     <div className={`line ${styles.line}`}>
-                        <p>Delve into coding without clutter</p>
+                        <p>Our work Our work our work</p>
                     </div>
                     <div className={`line ${styles.line}`}>
-                        <p>Delve into coding without clutter</p>
+                        <p>Our work Our work our work</p>
                     </div>
                 </div>
                 <div className="btn">
-                    <button className={`button ${styles.button}`}>Get PRO</button>
+                    <button className={`button ${styles.button}`}>WORKS</button>
                 </div>
             </div>
             {generateRows()}

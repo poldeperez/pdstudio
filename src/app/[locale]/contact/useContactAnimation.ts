@@ -9,13 +9,13 @@ export function useContactAnimation() {
   useGSAP(() => {
     // Hero animations
     if (heroRef.current) {
-      const title = heroRef.current.querySelector('h1');
+      const title = heroRef.current.querySelector('h2');
       const subtitle = heroRef.current.querySelector('p');
 
-      // ✅ Animate from hidden state
+      // Animate from hidden state
       gsap.from(title, {
         opacity: 0,
-        y: 50,
+        y: 30,
         duration: 1,
         ease: "power2.out",
         delay: 0.3,

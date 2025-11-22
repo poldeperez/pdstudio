@@ -1,4 +1,5 @@
 import { useServicesAnimation } from './useServicesAnimations';
+import { Link } from '@/i18n/navigation';
 import styles from './Services.module.css';
 
 interface CardProps {
@@ -27,6 +28,13 @@ const Card = ({ title, description, qualities, index }: CardProps) => {
           <img src={`/assets/card-${index + 1}.jpg`} alt={title} />
         </div>
       </div>
+      {index === 3 && (
+        <div className={styles.serviceButton}>
+          <Link href="/services">
+            Want to know more?
+          </Link>
+        </div>
+      )}
     </div>
   );
 };
@@ -95,9 +103,7 @@ export default function Services() {
           <Card key={index} {...card} index={index} />
         ))}
 
-      <div className={`services-outro ${styles.servicesOutro}`}>
-        
-      </div>
+      <div className={`services-outro ${styles.servicesOutro}`}></div>
     </section>
   );
 }

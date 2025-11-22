@@ -90,7 +90,6 @@
   background: linear-gradient(90deg, #0e1212 0%, #181e1e 100%);
   color: var(--color-white);
   height: 32em;
-  padding-bottom: 100px; 
 }
 
 .servicesOutro {
@@ -133,6 +132,33 @@
 .card:hover .cardImg img {
   transform: scale(1.04);
   transition: transform 0.4s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+/* Add to Services.module.css */
+
+.serviceButton {
+  display: flex;
+  justify-content: center;
+}
+
+.serviceButton a {
+  display: inline-block;
+  background: linear-gradient(90deg, #0a1a4d 0%, #1b7c5a 100%);
+  color: #fff;
+  font-weight: 600;
+  padding: 0.85em 2em;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  transition: background 0.2s, color 0.2s, transform 0.15s;
+}
+
+.serviceButton a:hover,
+.serviceButton a:focus {
+  background: linear-gradient(90deg, #1b7c5a 0%, #0a1a4d 100%);
+  color: #e6f0fa;
+  transform: translateY(-2px) scale(1.03);
 }
 
 /* Responsive */

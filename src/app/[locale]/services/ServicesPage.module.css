@@ -1,0 +1,213 @@
+.servicesSection {
+  width: 100%;
+  min-height: 100vh;
+  background: #f8fafc;
+  padding: 0 0 4em 0;
+}
+
+.servicesIntro {
+  width: 100%;
+  padding: 4em 0 4em 0;
+  text-align: center;
+  background: var(--color-black-linear);
+}
+
+.servicesIntro h2 {
+  font-size: clamp(3rem, 7rem, 10rem);
+  margin-bottom: 0.7em;
+  font-weight: 700;
+  color: var(--color-white);
+  transform: scaleY(1.15);
+  letter-spacing: 0.02em;
+}
+
+.servicesIntro p {
+  font-size: clamp(1.2rem, 1.5rem, 1.8rem);
+  font-weight: 300;
+  color: var(--color-white);
+  opacity: 0.75;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.servicesTabsWrapper {
+  display: flex;
+  max-width: 1600px;
+  margin: 0 auto 4em auto;
+  background: transparent;
+  height: 80vh; 
+}
+
+.tabsColumn {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  background: transparent;
+  border: 1.5px solid #e2e8f0;
+  box-shadow: none;
+  align-items: stretch;
+}
+
+.tabButton {
+  flex: 1 1 0; /* Each button takes equal height */
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #181e1e;
+  padding: 1em 1.5em;
+  cursor: pointer;
+  transition: background 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s;
+  opacity: 0.7;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.tabButton:last-child {
+  border-bottom: none;
+}
+
+.tabButton:hover {
+  background: linear-gradient(90deg, #93bbfa 0%, #9fddd4 100%);
+  color: #181e1e;
+  opacity: 1;
+}
+
+.activeTab {
+  background: linear-gradient(90deg, #93bbfa 0%, #9fddd4 100%);
+  color: #181e1e;
+  font-weight: 700;
+  opacity: 1;
+}
+
+.infoColumn {
+  flex: 1 1 0;
+  background: transparent; /* Transparent background */
+  border: 1.5px solid #e2e8f0;
+  border-left: none;
+  box-shadow: none;
+  padding: 2em 2.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  min-width: 0;
+}
+
+.cardInner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.cardContent {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.cardContent h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  margin-bottom: 1em;
+  font-weight: 500;
+  color: #181e1e;
+}
+
+.cardColumns {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.cardColumns p {
+  flex: 1;
+  margin: 0;
+  color: #222;
+  opacity: 0.85;
+}
+
+.cardQualities {
+  flex: 1;
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  color: #222;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+
+.cardQualities li {
+  margin-bottom: 0.5em;
+}
+
+.cardImg {
+  flex: 0 0 auto;
+  max-width: 500px;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 8px;
+  align-self: center;
+}
+
+.cardImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.4s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.infoColumn:hover .cardImg img {
+  transform: scale(1.07);
+}
+
+.extraInfo {
+  font-size: 1rem;
+  color: #222;
+  opacity: 0.8;
+  margin-top: 0.5em;
+}
+
+.cardText p {
+  margin-bottom: 1.2em; /* Adds space between the paragraph and the list */
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+  .servicesTabsWrapper {
+    flex-direction: column;
+    gap: 0;
+  }
+  .tabsColumn {
+    flex-direction: row;
+    gap: 0;
+    min-width: 0;
+    justify-content: center;
+    margin-bottom: 1em;
+    border-right: 1.5px solid #e2e8f0;
+    border-bottom: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .tabButton {
+    font-size: 1rem;
+    padding: 0.7em 1em;
+    border-bottom: none;
+    border-right: 1px solid #e2e8f0;
+    border-radius: 0;
+  }
+  .tabButton:last-child {
+    border-right: none;
+  }
+  .infoColumn {
+    padding: 1.2em 1em;
+    border-left: 1.5px solid #e2e8f0;
+    border-top: none;
+    border-radius: 0;
+  }
+}

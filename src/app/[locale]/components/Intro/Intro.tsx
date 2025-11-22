@@ -36,7 +36,8 @@ export default function Intro() {
           <p>
             From initial concept to final delivery, we work collaboratively
             with our clients to ensure every detail aligns with their vision.
-            We iterate, refine, and perfect until we achieve excellence.
+            We iterate, refine, and perfect until we implement the experience
+            that best represents our clients identity.
           </p>
         </div>
       </div>
@@ -47,10 +48,12 @@ export default function Intro() {
           {/* 3D model will be positioned here via CSS */}
         </div>
         <div className={`modelText ${styles.modelText}`} ref={modelTextRef}>
-          <h2>Innovation Meets Design</h2>
+          <h2>Innovation meets Design</h2>
           <p>
             We combine cutting-edge technology with creative design thinking
-            to build products that stand out in the digital landscape.
+            to build products that stand out in the digital landscape.<br />
+            Our goal is to allow our clients to leave an impression of themselves 
+            through disruptive designs and experiences.
           </p>
         </div>
       </div>

@@ -58,6 +58,7 @@
     height: 150px;
     overflow: hidden;
     transform: scale(0);
+    opacity: 0;
 }
 
 .copy {

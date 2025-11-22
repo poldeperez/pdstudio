@@ -22,10 +22,10 @@ export default function ContactPage() {
       {/* Hero Section */}
       <section className={styles.hero} ref={heroRef}>
         <div className={styles.heroContent}>
-          <h1 className={styles.heroTitle}>
+          <h2>
             LET'S WORK<br />TOGETHER
-          </h1>
-          <p className={styles.heroSubtitle}>
+          </h2>
+          <p>
             We'd love to hear about your project
           </p>
         </div>
@@ -36,7 +36,7 @@ export default function ContactPage() {
         <div className={styles.container}>
           <div className={styles.formGrid}>
             {/* Left: Form */}
-            <div className={styles.formColumn}>
+            <div className={`formColumn ${styles.formColumn}`}>
               <form className={styles.form}>
                 <div className={styles.formGroup}>
                   <label htmlFor="name" className={styles.label}>
@@ -99,7 +99,7 @@ export default function ContactPage() {
             </div>
 
             {/* Right: Contact Info */}
-            <div className={styles.infoColumn} ref={infoRef}>
+            <div className={`infoColumn ${styles.infoColumn}`} ref={infoRef}>
               <div className={styles.infoBlock}>
                 <h3 className={styles.infoTitle}>Email</h3>
                 <a href="mailto:hello@depstudio.com" className={styles.infoLink}>
