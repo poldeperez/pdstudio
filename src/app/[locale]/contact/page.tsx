@@ -5,6 +5,7 @@ import { useContactAnimation } from "./useContactAnimation";
 import Header from "../components/Header/Header";
 import styles from "./Contact.module.css";
 import { useTranslations } from "next-intl";
+import ContactFormStatus from "./ContactFormStatus";
 
 export default function ContactPage() {
   useSmoothScroll();
@@ -20,6 +21,7 @@ export default function ContactPage() {
   return (
     <>
     <Header />
+    <ContactFormStatus />
     <main className={styles.main}>
       {/* Hero Section */}
       <section className={styles.hero} ref={heroRef}>
@@ -91,7 +93,7 @@ export default function ContactPage() {
                   />
                 </div>
                 {/* Honeypot field hidden from users */}
-                <input type="text" name="phone" tabIndex={-1} autoComplete="off" className="hidden" />
+                <input type="text" name="phone" tabIndex={-1} autoComplete="off" className={styles.hiddenInput} />
 
                 <button type="submit" className={styles.submitButton}>
                   <span>{t("form.sendMessage")}</span>

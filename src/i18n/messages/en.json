@@ -102,17 +102,17 @@
       "tellUs": "Tell us about your project",
       "sendMessage": "Send Message",
       "agree": "By clicking you agree to the"
+    },
+    "success": {
+      "title": "Thank you!",
+      "message": "We have received your message successfully. We will get in touch with you as soon as possible.",
+      "close": "Close"
+    },
+    "error": {
+      "title": "Error",
+      "message": "There was a problem sending your message. Please try again or contact us directly.",
+      "close": "Close"
     }
-  },
-  "success": {
-    "title": "Thank you!",
-    "message": "We have received your message successfully. We will get in touch with you as soon as possible.",
-    "close": "Close"
-  },
-  "error": {
-    "title": "Error",
-    "message": "There was a problem sending your message. Please try again or contact us directly.",
-    "close": "Close"
   },
   "CTA": {
     "title": "Ready to transform your business?",

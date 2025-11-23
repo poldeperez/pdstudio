@@ -215,6 +215,11 @@
     opacity: 0.7;
 }
 
+/* Hidden Input */
+.hiddenInput {
+  display: none;
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
     .formGrid {
