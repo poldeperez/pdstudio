@@ -40,7 +40,7 @@ export default function Products() {
                         <p>{t("home3")}</p>
                     </div>
                 </div>
-                <Link href="/works" className="button-link-secondary">
+                <Link href="/works" className="button-link-secondary" onClick={() => window.scrollTo(0, 0)}>
                     {t("works")}
                 </Link>
             </div>

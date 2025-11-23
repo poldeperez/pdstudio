@@ -13,7 +13,7 @@ export default function ContactPage() {
     heroRef, 
     formRef, 
     infoRef 
-  } = useContactAnimation();
+  } = useContactAnimation();  
 
   const t = useTranslations("contact");
 

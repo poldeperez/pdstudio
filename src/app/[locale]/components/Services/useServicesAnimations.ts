@@ -10,7 +10,7 @@ export function useServicesAnimation() {
     const cardElements = gsap.utils.toArray<HTMLElement>(".card");
     const introH2 = containerRef.current.querySelector('.services-intro h2');
 
-    // ✅ Animate intro h2 letters rising from bottom with SplitText
+    // Animate intro h2 letters rising from bottom with SplitText
     if (introH2) {
       // Split text into characters
       const split = new SplitText(introH2, { 

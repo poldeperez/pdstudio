@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from '@/i18n/navigation';
 import styles from "./Services.module.css";
 import { useTranslations } from 'next-intl';
 
@@ -32,7 +32,7 @@ export function Card({ title, description, qualities, index }: CardProps) {
       </div>
       {index === 3 && (
         <div className={styles.serviceButton}>
-          <Link href="/services">
+          <Link href="/services" onClick={() => window.scrollTo(0, 0)}>
             {t("serviceButton")}
           </Link>
         </div>
