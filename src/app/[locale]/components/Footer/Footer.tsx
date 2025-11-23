@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from '@/i18n/navigation';
 import styles from "./Footer.module.css";
 import { useTranslations } from "next-intl";
 
@@ -55,7 +55,7 @@ export default function Footer() {
           <Link href="/privacy" className={styles.legalLink}>
             {t("privPolicy")}
           </Link>
-          <Link href="/terms" className={styles.legalLink}>
+          <Link href="/legal" className={styles.legalLink}>
             {t("termsOf")}
           </Link>
         </div>

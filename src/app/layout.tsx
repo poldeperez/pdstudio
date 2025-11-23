@@ -33,7 +33,7 @@ const haffer = localFont({
 
 
 export const metadata: Metadata = {
-  title: "dz node",
+  title: "Dz node",
   description: "Development studio for web apps, web design and SEO",
 };
 

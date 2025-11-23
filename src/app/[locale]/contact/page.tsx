@@ -39,7 +39,7 @@ export default function ContactPage() {
           <div className={styles.formGrid}>
             {/* Left: Form */}
             <div className={`formColumn ${styles.formColumn}`}>
-              <form className={styles.form}>
+              <form className={styles.form} method="POST" action="/api/contact">
                 <div className={styles.formGroup}>
                   <label htmlFor="name" className={styles.label}>
                     {t("form.name")} *
@@ -90,6 +90,8 @@ export default function ContactPage() {
                     required
                   />
                 </div>
+                {/* Honeypot field hidden from users */}
+                <input type="text" name="phone" tabIndex={-1} autoComplete="off" className="hidden" />
 
                 <button type="submit" className={styles.submitButton}>
                   <span>{t("form.sendMessage")}</span>
