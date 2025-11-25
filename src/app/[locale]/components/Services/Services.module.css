@@ -45,14 +45,13 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  justify-content: space-between; /* ✅ Title at top, columns at bottom */
+  justify-content: space-between;
 }
 
 .cardContent h1 {
   font-size: clamp(2.5rem, 6vw, 7rem);
   margin-bottom: 1em;
   font-weight: 400;
-  /* No need for extra margin-top */
 }
 
 .cardImg {
@@ -165,20 +164,53 @@
 
 /* Responsive */
 @media (max-width: 900px) {
-  .cardImg,
-  .cardContent p {
-    display: none;
+  .servicesIntro {
+    padding: 1em;
   }
-
   .card {
-    height: 300px;
+    height: 60em;
   }
 
   .cardInner {
-    padding: 1.5em;
+    flex-direction: column;
+    gap: 1.5em;
+    align-items: flex-start;
+    padding: 1.2em;
+    height: auto;
+  }
+  .card4 .cardInner {
+    height: 40em;
+    min-height: 40em;
   }
 
-  .servicesIntro h2 {
-    font-size: 2rem;
+  .cardImg {
+    display: block;
+    width: 100%;
+    margin: 0 auto 1em auto;
+    align-self: flex-start;
+    aspect-ratio: 4/3;
+    order: 2;
+  }
+
+  .cardContent {
+    width: 100%;
+    justify-content: flex-start;
+    order: 1;
+  }
+
+  .cardColumns {
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1em;
+    width: 100%;
+  }
+
+  .cardQualities {
+    padding-left: 1.2rem;
+    font-size: 0.95rem;
+    margin-bottom: 1em;
+    width: 100%;
+    order: 3;
+    display: block;
   }
 }

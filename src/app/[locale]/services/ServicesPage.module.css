@@ -47,7 +47,7 @@
   display: flex;
   flex-direction: column;
   min-width: 200px;
-  max-width: 210px;
+  max-width: 215px;
   background: transparent;
   border: 1.5px solid #e2e8f0;
   box-shadow: none;
@@ -101,6 +101,8 @@
   flex-direction: column;
   gap: 1.5em;
   min-width: 0;
+  overflow-wrap: break-word; /* Prevent overflow */
+  word-break: break-word;
 }
 
 .cardInner {
@@ -183,37 +185,144 @@
   margin-bottom: 1.2em; 
 }
 
-/* Responsive adjustments */
-@media (max-width: 900px) {
+/* 1. Prevent text overflow in .infoColumn */
+.infoColumn {
+  flex: 1 1 0;
+  background: transparent;
+  border: 1.5px solid #e2e8f0;
+  border-left: none;
+  box-shadow: none;
+  padding: 2em 2.5em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+  min-width: 0;
+  overflow-wrap: break-word; /* Prevent overflow */
+  word-break: break-word;
+}
+
+/* 2. First breakpoint at 1300px */
+@media (max-width: 1300px) {
+  .servicesTabsWrapper {
+    max-width: 100%;
+    height: auto;
+  }
+  .infoColumn {
+    padding: 1.5em 1em;
+  }
+  .cardImg {
+    max-width: 350px;
+  }
+}
+
+/* 3. Image resizing and stacking under <p> at 1000px */
+@media (max-width: 1000px) {
   .servicesTabsWrapper {
     flex-direction: column;
     gap: 0;
+    height: auto;
   }
   .tabsColumn {
     flex-direction: row;
-    gap: 0;
     min-width: 0;
-    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    justify-content: stretch;
     margin-bottom: 1em;
-    border-right: 1.5px solid #e2e8f0;
-    border-bottom: none;
-    border-top-left-radius: 0;
-    border-top-right-radius: 0;
+    border-right: none;
+    border-bottom: 1.5px solid #e2e8f0;
+    border-radius: 0;
   }
   .tabButton {
-    font-size: 1rem;
-    padding: 0.7em 1em;
+    flex: 1 1 0;
+    font-size: 0.95rem;
+    padding: 0.7em 0.5em;
     border-bottom: none;
     border-right: 1px solid #e2e8f0;
     border-radius: 0;
+    text-align: center;
+    justify-content: center;
   }
   .tabButton:last-child {
     border-right: none;
   }
   .infoColumn {
-    padding: 1.2em 1em;
-    border-left: 1.5px solid #e2e8f0;
+    padding: 1em 1em;
+    border-left: none;
     border-top: none;
     border-radius: 0;
+    min-width: 0;
+  }
+  .cardColumns {
+    flex-direction: column;
+    gap: 1.2em;
+  }
+  .cardImg {
+    max-width: 500px;
+    align-self: flex-start;
+    margin: 1em 0 0 0;
+    aspect-ratio: 16 / 9;
+    order: 2; /* Place image after text */
+  }
+  .cardText {
+    order: 1;
+  }
+  .servicesIntro {
+        padding: 6em 1em 4em 1em;
+    }
+  .servicesIntro h2 {
+        font-size: clamp(2.5rem, 6rem, 7.5rem);
+    }
+  .servicesIntro p {
+      font-size: clamp(1rem, 1.25rem, 1.5rem);
+    }
+  .cardContent h1 {
+    font-size: clamp(1rem, 4rem, 1.5rem);;
+  }
+  .extraInfo,
+  .cardColumns p,
+  .cardQualities {
+    font-size: 0.95rem;
+  }
+
+  .tabsColumn {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: stretch;
+    border-bottom: 1.5px solid #e2e8f0;
+    border-right: none;
+    border-radius: 0;
+  }
+  .tabButton {
+    flex: 1 1 0;
+    text-align: center;
+    border-right: 1px solid #e2e8f0;
+    border-bottom: none;
+    padding: 0.7em 0.5em;
+  }
+  .tabButton:last-child {
+    border-right: none;
+  }
+}
+
+/* 6. Further reduce font and image at 768px */
+@media (max-width: 768px) {
+  .servicesIntro h2 {
+        font-size: clamp(2rem, 4rem, 7rem);
+    }
+  .servicesIntro p {
+    font-size: clamp(1rem, 1.1rem, 1.3rem);
+  }
+  .extraInfo,
+  .cardColumns p,
+  .cardQualities {
+    font-size: 0.85rem;
+  }
+  .cardImg {
+    max-width: 100%;
+    width: 100%;
+    aspect-ratio: 16 / 9;
   }
 }

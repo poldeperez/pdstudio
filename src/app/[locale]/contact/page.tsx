@@ -6,6 +6,7 @@ import Header from "../components/Header/Header";
 import styles from "./Contact.module.css";
 import { useTranslations } from "next-intl";
 import ContactFormStatus from "./ContactFormStatus";
+import { Link } from '@/i18n/navigation';
 
 export default function ContactPage() {
   useSmoothScroll();
@@ -102,7 +103,7 @@ export default function ContactPage() {
                   </svg>
                 </button>
                 <p className={styles.agree}>
-                  * {t("form.agree")} Terms of Service & Privacy Policy
+                  * {t("form.agree")} <Link href="/legal" className={styles.legalLink}>{t("form.termsOf")}</Link> & <Link href="/privacy" className={styles.legalLink}>{t("form.privPolicy")}</Link>
                 </p>
               </form>
             </div>
@@ -112,7 +113,7 @@ export default function ContactPage() {
               <div className={styles.infoBlock}>
                 <h3 className={styles.infoTitle}>Email</h3>
                 <a href="mailto:hello@depstudio.com" className={styles.infoLink}>
-                  hello@depstudio.com
+                  hello@dznode.com
                 </a>
               </div>
             </div>

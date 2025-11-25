@@ -92,7 +92,10 @@
   opacity: 1;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
+  .worksIntro {
+    padding: 6em 1em 4em 1em;
+  }
   .projectsGrid {
     grid-template-columns: 1fr 1fr;
   }
@@ -104,13 +107,25 @@
     font-size: 1.3rem;
     margin: 1.2em 0 1.2em 1.2em;
   }
+  .worksIntro h2 {
+        font-size: clamp(2.5rem, 6rem, 7.5rem);
+    }
+  .worksIntro p {
+      font-size: clamp(1rem, 1.25rem, 1.5rem);
+    }
 }
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .projectsGrid {
     grid-template-columns: 1fr;
   }
   .projectCard {
     height: 48vw;
     min-height: 160px;
+  }
+  .worksIntro h2 {
+        font-size: clamp(2rem, 5rem, 7rem);
+    }
+  .worksIntro p {
+    font-size: clamp(1rem, 1.10rem, 1.3rem);
   }
 }

@@ -5,7 +5,7 @@ import { usePathname } from '@/i18n/navigation';
 export function useHeaderAnimation() {
     const headerRef = useRef<HTMLDivElement>(null);
     const companyNameRef = useRef<HTMLAnchorElement>(null);
-    const menuBgRef = useRef<HTMLButtonElement>(null);
+    const menuBgRef = useRef<HTMLButtonElement | null>(null);
     const pathname = usePathname();
     
     useGSAP(() => {
@@ -17,7 +17,7 @@ export function useHeaderAnimation() {
         const isHomePage = pathname === '/' || pathname === '';
 
         if (isHomePage) {
-            // ✅ Home page: Scroll-triggered animation
+            // Home page: Scroll-triggered animation
             gsap.set(companyName, {
                 y: -20,
                 rotationX: -90,
@@ -40,7 +40,7 @@ export function useHeaderAnimation() {
                 ease: "back.out(3)" 
             });
         } else {
-            // ✅ Other pages: Simple fade-in on load
+            // Other pages: Simple fade-in on load
             gsap.fromTo(companyName, 
                 {
                     y: -10,
@@ -61,7 +61,7 @@ export function useHeaderAnimation() {
         if (menuBg) {
             const lines = menuBg.querySelectorAll('.line');
             
-            // ✅ Entrance animation timeline
+            // Entrance animation timeline
             const t = gsap.timeline();
             
             t.fromTo(menuBg, 
@@ -99,11 +99,21 @@ export function useHeaderAnimation() {
                 }
             );
 
-            // ✅ Hover animations with animation killing
-            menuBg.addEventListener('mouseenter', () => {
-                gsap.killTweensOf(menuBg);
-                gsap.killTweensOf(lines);
-                
+            // Hover animations with animation killing
+            const mq = window.matchMedia('(min-width: 901px)');
+            function addHoverEvents() {
+                if (menuBg) {
+                    menuBg.addEventListener('mouseenter', handleEnter);
+                    menuBg.addEventListener('mouseleave', handleLeave);
+                }
+            }
+            function removeHoverEvents() {
+                if (menuBg) {
+                    menuBg.removeEventListener('mouseenter', handleEnter);
+                    menuBg.removeEventListener('mouseleave', handleLeave);
+                }
+            }
+            function handleEnter() {
                 gsap.to(menuBg, {
                     width: 450,
                     paddingLeft: 24,
@@ -111,19 +121,14 @@ export function useHeaderAnimation() {
                     duration: 0.4,
                     ease: "power2.out"
                 });
-
                 gsap.to(lines, {
                     opacity: 0,
                     scaleX: 0,
                     duration: 0.1,
                     ease: "power2.in"
                 });
-            });
-
-            menuBg.addEventListener('mouseleave', () => {
-                gsap.killTweensOf(menuBg);
-                gsap.killTweensOf(lines);
-                
+            }
+            function handleLeave() {
                 gsap.to(menuBg, {
                     width: 45,
                     paddingLeft: 0,
@@ -131,7 +136,6 @@ export function useHeaderAnimation() {
                     duration: 0.4,
                     ease: "power2.in"
                 });
-
                 gsap.to(lines, {
                     opacity: 1,
                     scaleX: 1,
@@ -140,13 +144,33 @@ export function useHeaderAnimation() {
                     stagger: 0.06,
                     delay: 0.5
                 });
-            });
-        }
+            }
 
-        return () => {
-            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-        };
-    }, [pathname]); // ✅ Add pathname as dependency
+            // Attach/detach events based on screen size
+            function handleMediaChange(e: MediaQueryListEvent) {
+                if (e.matches) {
+                    addHoverEvents();
+                } else {
+                    removeHoverEvents();
+                }
+            }
+
+            if (mq.matches) {
+                // Wait for entrance animation to finish before enabling hover
+                setTimeout(() => {
+                    addHoverEvents();
+                }, 1100); // 0.5s + 0.6s = 1.1s (1100ms)
+            }
+            mq.addEventListener('change', handleMediaChange);
+
+            // Cleanup
+            return () => {
+                removeHoverEvents();
+                mq.removeEventListener('change', handleMediaChange);
+                ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+            };
+        }
+    }, [pathname]); 
 
     return { headerRef, companyNameRef, menuBgRef };
 }

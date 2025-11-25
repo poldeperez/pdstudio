@@ -17,7 +17,7 @@ export function Card({ title, description, qualities, index }: CardProps) {
       <div className={`card-inner ${styles.cardInner}`}>
         <div className={`cardContent ${styles.cardContent}`}>
           <h1>{title}</h1>
-          <div className={styles.cardColumns}>
+          <div className={`cardColumns ${styles.cardColumns}`}>
             <p>{description}</p>
             <ul className={styles.cardQualities}>
               {qualities.map((q, i) => (

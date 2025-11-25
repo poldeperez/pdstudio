@@ -2,7 +2,7 @@
     position: relative;
     width: 100vw;
     min-height: 200vh;
-    background: linear-gradient(90deg, #0e1212 0%, #181e1e 100%);
+    background: var(--color-black-linear);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,6 +23,7 @@
     line-height: 1.1;
     font-weight: 700;
     letter-spacing: 0.05em;
+    transform: scaleY(1.10);
     text-transform: uppercase;
     margin: 0;
     color: var(--color-white);
@@ -33,11 +34,12 @@
 @media (max-width: 900px) {
     .main {
         padding: 5vh 5vw;
-        min-height: 80vh;
+        min-height:200vh;
     }
 
     .title h2 {
         font-size: clamp(2rem, 10vw, 5rem);
         letter-spacing: 0.02em;
+        padding-top: 4em;
     }
 }

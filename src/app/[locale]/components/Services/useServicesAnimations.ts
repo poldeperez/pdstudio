@@ -51,8 +51,9 @@ export function useServicesAnimation() {
     // Animate each card
     cardElements.forEach((card, index) => {
       const cardInner = card.querySelector<HTMLElement>(".card-inner");
-      const cardImg = card.querySelector<HTMLElement>(".cardImg"); // ✅ Get the image container
-      const cardTitle = card.querySelector<HTMLElement>(".cardContent h1"); // ✅ Select the h1
+      const cardImg = card.querySelector<HTMLElement>(".cardImg");
+      const cardTitle = card.querySelector<HTMLElement>(".cardContent h1");
+      const cardText = card.querySelector<HTMLElement>(".cardColumns");
 
       ScrollTrigger.create({
         trigger: card,
@@ -100,6 +101,24 @@ export function useServicesAnimation() {
       if (cardTitle) {
         gsap.fromTo(
           cardTitle,
+          { y: 40, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 0.7,
+            ease: "power2.out",
+            scrollTrigger: {
+              trigger: card,
+              start: "top 60%",
+              toggleActions: "play none none none"
+            }
+          }
+        );
+      }
+      // Animate p: slide up and fade in
+      if (cardText) {
+        gsap.fromTo(
+          cardText,
           { y: 40, opacity: 0 },
           {
             y: 0,

@@ -58,7 +58,8 @@ export default function ServicesPage() {
 								<h1>{servicesData[activeIdx].title}</h1>
 								<div className={styles.cardColumns}>
 									<div className={styles.cardText}>
-										<p>{servicesData[activeIdx].description}</p>
+										<p>{servicesData[activeIdx].descLong}</p>
+										<p>{t("deliver")}</p>
 										<ul className={styles.cardQualities}>
 											{servicesData[activeIdx].qualities.map((q: string, i: number) => (
 												<li key={i}>{q}</li>

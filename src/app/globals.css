@@ -7,6 +7,8 @@
   --color-secondary-dark: #E58A74;
   --color-secondary-light: #FFD9CE;
   --color-black-linear: linear-gradient(90deg, #0e1212 0%, #181e1e 100%);
+  --color-blue-green-linear: linear-gradient(90deg,#161479e3 0%,#1a27ddd3 35%,#2574e2e4 70%,#3fa86cdd 100%);
+  --color-blue-green-linear-solid: linear-gradient(90deg,#161479 0%,#1a27dd 35%,#2574e2 70%,#3fa86c 100%);
   
   /* Neutral colors */
   --color-black: #0F1F1E;

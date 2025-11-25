@@ -14,7 +14,7 @@
   },
   "intro": {
     "title": "We are a digital studio crafting exceptional experiences through design and technology",
-    "subtitle": "WHO WE ARE WHO WE ARE WHO WE ARE",
+    "subtitle": "IMAGINE - BUILD - INSPIRE - IMPACT",
     "ourApproach": "Our Approach",
     "approach": "We believe in creating digital experiences that are not only visually stunning but also highly functional and user-centric. Every project starts with understanding your goals and audience.",
     "ourProcess": "Our Process",
@@ -26,11 +26,13 @@
   "services": {
     "title": "What we do",
     "subtitle": "At <b>dz node</b>, we believe in a collaborative, transparent, and iterative approach. We listen, research, and co-create with you to deliver solutions that are tailored, effective, and future-proof. Every service we offer is rooted in strategy, creativity, and measurable results.",
+    "deliver": "What we deliver:",
     "cards": [
     {
       "title": "Web Design",
       "description":
         "Designing visually stunning and user-friendly websites that provide an exceptional user experience across all devices.",
+      "descLong": "We create visually stunning, user-centered websites designed to deliver a seamless experience across all devices. Every layout, interaction, and visual element is crafted with the user in mind—ensuring clarity, engagement, and effortless navigation.",
       "qualities": [
         "Responsive layouts",
         "UI/UX Design",
@@ -38,13 +40,14 @@
         "Performance",
         "User Testing"
       ],
-      "extraInfo": "Our web designs are not just beautiful—they’re built for usability, speed, and conversion, ensuring your visitors become customers."
+      "extraInfo": "Our web designs are not only visually appealing—they’re strategically built for usability, speed, and conversion. Every detail is optimized to turn visitors into customers and create a strong digital presence that reflects your brand’s identity."
 	
     },
     {
       "title": "SEO Optimization",
       "description":
         "Implementing effective SEO strategies to improve your website's visibility and ranking on search engines.",
+      "descLong": "We implement effective, data-driven SEO strategies designed to improve your website’s visibility, increase search engine rankings, and attract high-quality organic traffic. Our approach focuses on long-term, sustainable growth that strengthens your online presence and puts your brand in front of the right audience.",
       "qualities": [
         "Positioning",
         "Keyword research",
@@ -52,12 +55,13 @@
         "Link building",
         "Technical audits"
       ],
-      "extraInfo": "We use the latest techniques to boost your search rankings, increase organic traffic, and maximize your online visibility."
+      "extraInfo": "We use the latest SEO techniques and industry best practices to boost your search performance, increase organic traffic, and maximize your online visibility. Every strategy is customized, measurable, and built to deliver long-term results—not just quick wins."
     },
     {
       "title": "Product",
       "description":
         "We analyze your business to implement precise products that adapt to your needs. End-to-end process, from the initial study to the deployment in production and its later maintenance.",
+      "descLong": "We transform business needs into clear, functional, and scalable digital products. From the initial discovery phase to design, development, deployment, and ongoing maintenance, we manage the entire product lifecycle with a focus on usability, reliability, and long-term growth. Our goal is to deliver solutions that not only work—but work for you.",
       "qualities": [
         "UX/UI Design",
         "User Testing",
@@ -66,12 +70,13 @@
         "Database integration",
         "Business logic"
       ],
-      "extraInfo": "Our web designs are not just beautiful—they’re built for usability, speed, and conversion, ensuring your visitors become customers."
+      "extraInfo": "We combine strategy, design, and technical expertise to build products that are both powerful and easy to use. Every decision—from architecture to interface—is guided by your goals, ensuring the final result is robust, scalable, and aligned with your business vision."
     },
     {
       "title": "Digital Marketing",
       "description":
         "Implementing effective digital marketing strategies to boost your online presence and drive traffic to your website. Applying stratgegies to improve the conversion rate of potential clients.",
+      "descLong": "We implement effective digital marketing strategies designed to strengthen your online presence, attract the right audience, and increase conversions. By combining data-driven insights with creative execution, we help your business connect with potential customers at the right moment and through the right channels.",
       "qualities": [
         "Google Ads",
         "UX/UI experience",
@@ -80,7 +85,7 @@
         "Analytics",
         "Market research"
       ],
-      "extraInfo": "From Google Ads to social media, we create campaigns that drive real results and help your business grow online."
+      "extraInfo": "From search ads to conversion-focused landing pages, we craft digital marketing campaigns that deliver real, measurable results. Every strategy is customized to your audience and business goals, helping you grow online with confidence and clarity."
     }
   ],
   "serviceButton": "More info"
@@ -101,7 +106,9 @@
       "company": "Company",
       "tellUs": "Tell us about your project",
       "sendMessage": "Send Message",
-      "agree": "By clicking you agree to the"
+      "agree": "By clicking you agree to the",
+      "privPolicy": "Privacy Policy",
+      "termsOf": "Terms of Service"
     },
     "success": {
       "title": "Thank you!",
@@ -113,6 +120,9 @@
       "message": "There was a problem sending your message. Please try again or contact us directly.",
       "close": "Close"
     }
+  },
+  "outro": {
+    "title": "LET'S BRING YOUR IDEAS TO LIFE"
   },
   "CTA": {
     "title": "Ready to transform your business?",

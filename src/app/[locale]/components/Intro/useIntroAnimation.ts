@@ -7,7 +7,10 @@ export function useIntroAnimation() {
   const columnsRef = useRef<HTMLDivElement>(null);
   const modelTextRef = useRef<HTMLDivElement>(null);
 
+  
+  
   useGSAP(() => {
+    const isMobile = window.innerWidth < 900;
     // Animate main title
     if (titleRef.current) {
       const split = new SplitText(titleRef.current, {
@@ -74,7 +77,7 @@ export function useIntroAnimation() {
 
     // Animate model text with scrub (follows scroll like the 3D model)
     if (modelTextRef.current) {
-      // ✅ Phase 1: Text slides in from right
+      // Phase 1: Text slides in from right
       gsap.from(modelTextRef.current, {
         x: 200,
         opacity: 0,
@@ -88,11 +91,11 @@ export function useIntroAnimation() {
         },
       });
 
-      // ✅ Phase 2 & 3: Keep text pinned during rotation 
+      // Phase 2 & 3: Keep text pinned during rotation 
       ScrollTrigger.create({
         trigger: ".modelContainer",
         start: "top+=40vh top",
-        end: "+=290vh", // ✅ Updated: Pin for phase 2 (200vh) and phase 3
+        end: "+=290vh", //  Updated: Pin for phase 2 (200vh) and phase 3
         pin: modelTextRef.current,
         pinSpacing: false,
         markers: false,
