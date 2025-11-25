@@ -1,5 +1,5 @@
 "use client";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { usePathname, Link } from '@/i18n/navigation';
 import { locales, type Locale } from "@/i18n/config";
 import { useState, useRef, useEffect } from 'react';
@@ -12,6 +12,7 @@ export default function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const mobileMenuRef = useRef<HTMLDivElement>(null);
     const { headerRef, companyNameRef, menuBgRef } = useHeaderAnimation();
+    const t = useTranslations("navigation");
     
     useEffect(() => {
         if (!isMenuOpen) return;
@@ -53,9 +54,9 @@ export default function Header() {
                         <div className={`menuContent ${styles.menuContent}`}>
                             {/* Navigation Links */}
                             <div className={`hoverMenuLinks ${styles.hoverMenuLinks}`}>
-                                <Link href="/services" className={`hoverMenuLink ${styles.hoverMenuLink}`}>SERVICES</Link>
-                                <Link href="/works" className={`hoverMenuLink ${styles.hoverMenuLink}`}>WORKS</Link>
-                                <Link href="/contact" className={`hoverMenuLink ${styles.hoverMenuLink}`}>CONTACT</Link>
+                                <Link href="/services" className={`hoverMenuLink ${styles.hoverMenuLink}`}>{t("services")}</Link>
+                                <Link href="/works" className={`hoverMenuLink ${styles.hoverMenuLink}`}>{t("works")}</Link>
+                                <Link href="/contact" className={`hoverMenuLink ${styles.hoverMenuLink}`}>{t("contact")}</Link>
                             </div>
                             
                             {/* Language Selector */}
@@ -92,9 +93,9 @@ export default function Header() {
                         <div className={styles.mobileMenuBox}>
                             <div className={styles.mobileMenuContent}>
                                 <div className={styles.mobileMenuLinks}>
-                                    <Link href="/services" className={styles.mobileMenuLink}>SERVICES</Link>
-                                    <Link href="/works" className={styles.mobileMenuLink}>WORKS</Link>
-                                    <Link href="/contact" className={styles.mobileMenuLink}>CONTACT</Link>
+                                    <Link href="/services" className={styles.mobileMenuLink}>{t("services")}</Link>
+                                    <Link href="/works" className={styles.mobileMenuLink}>{t("works")}</Link>
+                                    <Link href="/contact" className={styles.mobileMenuLink}>{t("contact")}</Link>
                                 </div>
                                 <div className={styles.mobileMenuLang}>
                                     {locales.map((lang) => (

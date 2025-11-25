@@ -40,7 +40,8 @@
   max-width: 1600px;
   margin: 0 auto 4em auto;
   background: transparent;
-  height: 80vh; 
+  min-height: 0;
+  height: auto;
 }
 
 .tabsColumn {
@@ -159,7 +160,7 @@
   aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: 8px;
-  align-self: center;
+  align-self: flex-start;
 }
 
 .cardImg img {

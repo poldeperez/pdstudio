@@ -128,4 +128,14 @@
   .worksIntro p {
     font-size: clamp(1rem, 1.10rem, 1.3rem);
   }
+  .projectTitle {
+    opacity: 1;
+  }
+  .projectCard::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(24,30,30,0.45) 0%, rgba(24,30,30,0.15) 100%);
+    z-index: 1;
+  }
 }

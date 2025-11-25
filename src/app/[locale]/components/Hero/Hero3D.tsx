@@ -23,6 +23,8 @@ function Model() {
     mouseX: 0,
     mouseY: 0,
   });
+
+  const scaleRef = useRef(1);
   
   useEffect(() => {
     if (!modelRef.current) return;
@@ -49,6 +51,24 @@ function Model() {
     const center = box.getCenter(new THREE.Vector3());
     model.position.sub(center);
 
+    const screenWidth = window.innerWidth;
+    let scale = 1;
+    let smallScale = 0.7;
+    let xTranslate = -1.75;
+    let yTranslate = 0;
+    if (screenWidth < 600) {
+      scale = 0.6;
+      smallScale = 0.4;
+      xTranslate = 0;
+      yTranslate = 0.8;
+    } else if (screenWidth < 900) {
+      scale = 0.8;
+      smallScale = 0.5;
+      xTranslate = 0;
+      yTranslate = 0.8;
+    }
+    scaleRef.current = scale;
+    
     // Adjust camera based on model size
     const size = box.getSize(new THREE.Vector3());
     const maxDim = Math.max(size.x, size.y, size.z);
@@ -56,12 +76,13 @@ function Model() {
 
     // Start at scale 0 (for animation)
     model.scale.set(0, 0, 0);
+
     
     // Play initial scale-in animation
     gsap.to(model.scale, {
-      x: 1,
-      y: 1,
-      z: 1,
+      x: scale,
+      y: scale,
+      z: scale,
       duration: 1,
       ease: "power2.out",
     });
@@ -73,9 +94,9 @@ function Model() {
       end: "top -10",
       onEnterBack: () => {
         gsap.to(model.scale, {
-          x: 1,
-          y: 1,
-          z: 1,
+          x: scale,
+          y: scale,
+          z: scale,
           duration: 1,
           ease: "power2.out",
         });
@@ -95,9 +116,9 @@ function Model() {
       start: "top 65%",
       onEnter: () => {
         gsap.to(model.scale, {
-          x: 0.7,
-          y: 0.7,
-          z: 0.7,
+          x: smallScale,
+          y: smallScale,
+          z: smallScale,
           duration: 1,
           ease: "power2.out"
         });
@@ -105,9 +126,9 @@ function Model() {
       },
       onLeaveBack: () => {
         gsap.to(model.scale, {
-          x: 1,
-          y: 1,
-          z: 1,
+          x: scale,
+          y: scale,
+          z: scale,
           duration: 1,
           ease: "power2.out"
         });
@@ -131,8 +152,8 @@ if (stickySection) {
 
   // ✅ Phase 1: Move model to left (0-150vh)
   tl.to(model.position, {
-    x: -1.75,
-    y: 0,
+    x: xTranslate,
+    y: yTranslate,
     ease: "none",
     duration: 150, // Proportional duration
   });
@@ -175,9 +196,9 @@ if (stickySection) {
         ease: "power2.out"
       });
       gsap.to(model.scale, {
-        x: 0.7,
-        y: 0.7,
-        z: 0.7,
+        x: smallScale,
+        y: smallScale,
+        z: smallScale,
         duration: 0.8,
         ease: "power2.out"
       });
@@ -221,7 +242,7 @@ if (stickySection) {
 
     // Floating animation (only in hero)
     if (isFloating) {
-      const floatOffset = Math.sin(Date.now() * 0.001 * floatSpeed) * floatAmplitude;
+      const floatOffset = Math.sin(Date.now() * 0.001 * floatSpeed) * floatAmplitude * scaleRef.current;
       model.position.y = floatOffset;
 
       // Cursor follow - smooth rotation based on mouse

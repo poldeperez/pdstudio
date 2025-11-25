@@ -1,11 +1,236 @@
 {
   "home": {
-    "title": "Hola mundo!"
+    "title": "Dz node"
   },
-  "header": {
-
+  "navigation": {
+    "navigate": "Navegar",
+    "home": "Inicio",
+    "services": "Servicios",
+    "works": "Proyectos",
+    "contact": "Contacto",
+    "allRights": "Todos los derechos reservados",
+    "privPolicy": "Política de Privacidad",
+    "termsOf": "Términos de Servicio"
   },
   "intro": {
-    
+    "title": "Somos un estudio digital que crea experiencias excepcionales a través del diseño y la tecnología",
+    "subtitle": "IMAGINA - CONSTRUYE - INSPIRA - IMPACTA",
+    "ourApproach": "Nuestro enfoque",
+    "approach": "Creemos en crear experiencias digitales que no solo sean visualmente impactantes, sino también altamente funcionales y centradas en el usuario. Cada proyecto comienza con la comprensión de tus objetivos y audiencia.",
+    "ourProcess": "Nuestro proceso",
+    "process": "Desde el concepto inicial hasta la entrega final, trabajamos colaborativamente con nuestros clientes para asegurar que cada detalle se alinee con su visión. Iteramos, refinamos y perfeccionamos hasta implementar el producto que mejor representa la identidad de nuestros clientes.",
+    "innDesign": "Innovación y Diseño",
+    "design1": "Combinamos tecnología de vanguardia con pensamiento creativo de diseño para construir productos que destacan en el entorno digital.",
+    "design2": "Nuestro objetivo es permitir que nuestros clientes dejen su huella a través de diseños e interfaces disruptivas."
+  },
+  "services": {
+    "title": "Qué hacemos",
+    "subtitle": "En <b>dz node</b>, creemos en un enfoque colaborativo, transparente e iterativo. Escuchamos, investigamos y co-creamos contigo para ofrecer soluciones personalizadas, efectivas y preparadas para el futuro. Cada servicio que ofrecemos está basado en estrategia, creatividad y resultados medibles.",
+    "deliver": "Qué entregamos:",
+    "cards": [
+    {
+      "title": "Diseño Web",
+      "description":
+        "Diseñamos sitios web visualmente atractivos y fáciles de usar que ofrecen una experiencia excepcional en todos los dispositivos.",
+      "descLong": "Creamos sitios web visualmente impactantes y centrados en el usuario, diseñados para ofrecer una experiencia fluida en todos los dispositivos. Cada diseño, interacción y elemento visual está pensado para el usuario, asegurando claridad, engagement y navegación sencilla.",
+      "qualities": [
+        "Diseños responsivos",
+        "Diseño UI/UX",
+        "Accesibilidad",
+        "Rendimiento",
+        "Pruebas de usuario"
+      ],
+      "extraInfo": "Nuestros diseños web no solo son atractivos visualmente, sino que están estratégicamente construidos para la usabilidad, velocidad y conversión. Cada detalle está optimizado para convertir visitantes en clientes y crear una presencia digital sólida que refleje la identidad de tu marca."
+    },
+    {
+      "title": "Optimización SEO",
+      "description":
+        "Implementamos estrategias SEO efectivas para mejorar la visibilidad y el posicionamiento de tu sitio web en los motores de búsqueda.",
+      "descLong": "Implementamos estrategias SEO efectivas y basadas en datos para mejorar la visibilidad de tu sitio web, aumentar el posicionamiento en buscadores y atraer tráfico orgánico de calidad. Nuestro enfoque se centra en el crecimiento sostenible a largo plazo que fortalece tu presencia online y pone tu marca frente a la audiencia adecuada.",
+      "qualities": [
+        "Posicionamiento",
+        "Investigación de palabras clave",
+        "SEO on-page",
+        "Link building",
+        "Auditorías técnicas"
+      ],
+      "extraInfo": "Utilizamos las últimas técnicas SEO y las mejores prácticas del sector para mejorar tu rendimiento en búsquedas, aumentar el tráfico orgánico y maximizar tu visibilidad online. Cada estrategia es personalizada, medible y diseñada para ofrecer resultados duraderos, no solo éxitos rápidos."
+    },
+    {
+      "title": "Producto",
+      "description":
+        "Analizamos tu negocio para implementar aplicaciones web precisas que se adapten a tus necesidades. Proceso integral, desde el estudio inicial hasta el despliegue en producción y su posterior mantenimiento.",
+      "descLong": "Transformamos necesidades empresariales en aplicaciones web claras, funcionales y escalables. Desde la fase de descubrimiento hasta el diseño, desarrollo, despliegue y mantenimiento, gestionamos todo el ciclo de vida del producto con foco en la usabilidad, fiabilidad y crecimiento a largo plazo. Nuestro objetivo es entregar soluciones que no solo funcionen, sino que funcionen para ti.",
+      "qualities": [
+        "Diseño UX/UI",
+        "Pruebas de usuario",
+        "Prototipo de producto",
+        "Diseño de aplicaciones web",
+        "Integración de bases de datos",
+        "Lógica de negocio"
+      ],
+      "extraInfo": "Combinamos estrategia, diseño y experiencia técnica para construir productos potentes y fáciles de usar. Cada decisión, desde la arquitectura hasta la interfaz, está guiada por tus objetivos, asegurando que el resultado final sea robusto, escalable y alineado con la visión de tu negocio."
+    },
+    {
+      "title": "Marketing Digital",
+      "description":
+        "Implementamos estrategias de marketing digital efectivas para potenciar tu presencia online y atraer tráfico a tu sitio web. Aplicamos estrategias para mejorar la tasa de conversión de potenciales clientes.",
+      "descLong": "Implementamos estrategias de marketing digital efectivas para fortalecer tu presencia online, atraer a la audiencia adecuada y aumentar las conversiones. Combinando análisis de datos con creatividad, ayudamos a tu negocio a conectar con clientes potenciales en el momento y canal adecuados.",
+      "qualities": [
+        "Google Ads",
+        "Experiencia UX/UI",
+        "Campañas de email",
+        "Estrategia de contenidos",
+        "Analítica",
+        "Investigación de mercado"
+      ],
+      "extraInfo": "Desde anuncios en buscadores hasta landing pages orientadas a la conversión, creamos campañas de marketing digital que ofrecen resultados reales y medibles. Cada estrategia se personaliza para tu audiencia y objetivos de negocio, ayudándote a crecer online con confianza y claridad."
+    }
+  ],
+  "serviceButton": "Más información"
+  },
+  "works": {
+    "works": "Proyectos",
+    "home1": "Sectores diferentes, soluciones diferentes",
+    "home2": "Llevamos tus ideas a la realidad",
+    "home3": "Descubre nuestros proyectos",
+    "title": "Nuestro trabajo",
+    "subtitle": "Colaboramos con marcas y organizaciones ambiciosas para crear experiencias digitales que inspiran, conectan y generan resultados. Aquí tienes algunos de nuestros proyectos favoritos, cada uno una historia de colaboración, creatividad e impacto medible."
+  },
+  "contact": {
+    "title": "Trabajemos juntos",
+    "subtitle": "Nos encantaría conocer tu proyecto",
+    "form": {
+      "name": "Nombre",
+      "company": "Empresa",
+      "tellUs": "Cuéntanos sobre tu proyecto",
+      "sendMessage": "Enviar mensaje",
+      "agree": "Al hacer clic aceptas",
+      "privPolicy": "Política de Privacidad",
+      "termsOf": "Términos de Servicio"
+    },
+    "success": {
+      "title": "¡Gracias!",
+      "message": "Hemos recibido tu mensaje correctamente. Nos pondremos en contacto contigo lo antes posible.",
+      "close": "Cerrar"
+    },
+    "error": {
+      "title": "Error",
+      "message": "Hubo un problema al enviar tu mensaje. Por favor, inténtalo de nuevo o contáctanos directamente.",
+      "close": "Cerrar"
+    }
+  },
+  "outro": {
+    "title": "Tu proyecto merece destacar"
+  },
+  "CTA": {
+    "title": "¿Listo para transformar tu negocio?",
+    "subtitle": "Hablemos sobre tu próximo proyecto y cómo podemos ayudarte a tener éxito.",
+    "button": "Contáctanos"
+  },
+  "legal": {
+    "title": "Aviso Legal",
+    "subtitle": "Información legal sobre este sitio web",
+    "section1": {
+      "title": "I. INFORMACIÓN GENERAL",
+      "content": "En cumplimiento del deber de información previsto en la Ley 34/2002 de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE) de 11 de julio, se facilitan los siguientes datos generales de este sitio web: La titularidad de este sitio web, https://dznode.com/, (en adelante, Sitio Web) corresponde a Dz node, cuyos datos de contacto son: Teléfono de contacto: 0034 608 477 693. Correo electrónico de contacto: hello@dznode.com"
+    },
+    "section2": {
+      "title": "II. CONDICIONES GENERALES DE USO",
+      "content": "Objeto de las condiciones: El Sitio Web. El objeto de estas Condiciones Generales de Uso (en adelante, Condiciones) es regular el acceso y uso del Sitio Web. A efectos de estas Condiciones, se entenderá como Sitio Web: la apariencia externa de las interfaces de pantalla, tanto de forma estática como dinámica, es decir, el árbol de navegación; y todos los elementos integrados tanto en las interfaces de pantalla como en el árbol de navegación (en adelante, Contenidos) y todos aquellos servicios o recursos en línea que pueda ofrecer a los Usuarios (en adelante, Servicios). Dz node se reserva el derecho de modificar, en cualquier momento y sin previo aviso, la presentación y configuración del Sitio Web y los Contenidos y Servicios que puedan incorporarse en el mismo. El Usuario reconoce y acepta que en cualquier momento Dz node puede interrumpir, desactivar y/o cancelar cualquiera de estos elementos que están integrados en el Sitio Web o el acceso a los mismos. El acceso al Sitio Web por parte del Usuario es libre y, como regla general, gratuito sin que el Usuario tenga que proporcionar contraprestación para disfrutar de ello, salvo el coste de conexión a través de la red de telecomunicaciones suministrada por el proveedor de acceso que el Usuario haya contratado. El uso de los Contenidos no requiere suscripción o registro previo.",
+      "content2": "El Usuario. El acceso, navegación y uso del Sitio Web confiere la condición de Usuario, por lo que se aceptan todas las Condiciones aquí establecidas desde el momento en que se inicia la navegación por el Sitio Web, así como sus posteriores modificaciones, sin perjuicio de la aplicación de la correspondiente normativa legal obligatoria según el caso. Dada la relevancia de lo anterior, se recomienda al Usuario leerlas cada vez que visite el Sitio Web. El Sitio Web de Dz node ofrece una gran diversidad de información, servicios y datos. El Usuario asume la responsabilidad de hacer un uso correcto del Sitio Web. Esta responsabilidad se extenderá a: El uso de la información, Contenidos y/o Servicios y datos ofrecidos por Dz node que no sea contrario a lo dispuesto en estas Condiciones, la Ley, la moral o el orden público, o que de cualquier otra forma pueda suponer daño a los derechos de terceros o al funcionamiento del propio Sitio Web. La veracidad y legalidad de la información proporcionada por el Usuario en los formularios facilitados por Dz node para el acceso a ciertos Contenidos o Servicios ofrecidos por el Sitio Web. En cualquier caso, el Usuario notificará de inmediato a Dz node cualquier hecho que permita el uso indebido de la información registrada en dichos formularios, como, pero no limitado a, robo, pérdida, o acceso no autorizado a identificadores y/o contraseñas, con el fin de proceder a su inmediata cancelación. El mero acceso a este Sitio Web no implica establecer ningún tipo de relación comercial entre Dz node y el Usuario. Siempre en cumplimiento de la legislación vigente, este Sitio Web de Dz node está dirigido a todas las personas, independientemente de su edad, que puedan acceder y/o navegar por las páginas del Sitio Web."
+    },
+    "section3": {
+      "title": "III. ACCESO Y NAVEGACIÓN EN EL SITIO WEB: EXCLUSIÓN DE GARANTÍAS Y RESPONSABILIDAD",
+      "content": "Dz node no garantiza la continuidad, disponibilidad y utilidad del Sitio Web, ni de los Contenidos o Servicios. Dz node hará todo lo posible para el correcto funcionamiento del Sitio Web, sin embargo, no se responsabiliza ni garantiza que el acceso a este Sitio Web no sea interrumpido o que esté libre de errores. Tampoco se responsabiliza ni garantiza que el contenido o software al que se pueda acceder a través de este Sitio Web esté libre de errores o cause daños al sistema informático del Usuario (software y hardware). En ningún caso Dz node será responsable por pérdidas, daños o perjuicios de cualquier tipo derivados del acceso, navegación y uso del Sitio Web, incluyendo, pero no limitado a, los causados a sistemas informáticos o los provocados por la introducción de virus. Dz node tampoco se responsabiliza por los daños que puedan ser causados a los usuarios por un uso indebido de este Sitio Web. En particular, no se responsabiliza de ninguna manera por fallos, interrupciones, falta o defecto de las telecomunicaciones que puedan ocurrir."
+    },
+    "section4": {
+      "title": "IV. POLÍTICA DE ENLACES",
+      "content": "Se informa que el Sitio Web de Dz node pone o puede poner a disposición de los Usuarios medios de enlace (como, entre otros, enlaces, banners, botones), directorios y motores de búsqueda que permiten a los Usuarios acceder a sitios web propiedad y/o gestionados por terceros. La instalación de estos enlaces, directorios y motores de búsqueda en el Sitio Web tiene como objetivo facilitar a los Usuarios la búsqueda y acceso a la información disponible en Internet, sin que se considere una sugerencia, recomendación o invitación a visitarlos. Dz node no ofrece ni comercializa, por sí mismo ni a través de terceros, los productos y/o servicios disponibles en dichos sitios enlazados. Dz node ofrece contenido patrocinado, anuncios y/o enlaces de afiliados. La información que aparece en estos enlaces de afiliados o anuncios insertados es facilitada por los propios anunciantes, por lo que Dz node no se responsabiliza de posibles inexactitudes o errores que puedan contener los anuncios, ni garantiza en modo alguno la experiencia, integridad o responsabilidad de los anunciantes o la calidad de sus productos y/o servicios. Asimismo, no garantiza la disponibilidad técnica, exactitud, veracidad, validez o legalidad de sitios ajenos a su propiedad a los que se pueda acceder a través de los enlaces. Dz node en ningún caso revisará o controlará el contenido de otros sitios web, ni aprueba, examina ni hace propios los productos y servicios, contenidos, archivos y cualquier otro material existente en dichos sitios enlazados. Dz node no asume ninguna responsabilidad por los daños que puedan derivarse del acceso, uso, calidad o legalidad de los contenidos, comunicaciones, opiniones, productos y servicios de sitios web no gestionados por Dz node y que estén enlazados en este Sitio Web. El Usuario o tercero que realice un hipervínculo desde otra página web diferente al Sitio Web de Dz node debe saber que: No se permite la reproducción —total o parcial— de ninguno de los Contenidos y/o Servicios del Sitio Web sin autorización expresa de Dz node. Tampoco se permite ninguna manifestación falsa, inexacta o incorrecta sobre el Sitio Web de Dz node, o sobre sus Contenidos y/o Servicios. Con excepción del hipervínculo, la página web en la que se establezca dicho hipervínculo no contendrá ningún elemento, de este Sitio Web, protegido como propiedad intelectual por el ordenamiento jurídico español, salvo autorización expresa de Dz node. El establecimiento del hipervínculo no implicará la existencia de relaciones entre Dz node y el titular de la página web desde la que se realice, ni el conocimiento y aceptación por parte de Dz node de los contenidos, servicios y/o actividades ofrecidos en dicha página web, y viceversa."
+    },
+    "section5": {
+      "title": "V. PROPIEDAD INTELECTUAL E INDUSTRIAL",
+      "content": "Dz node, por sí mismo o como cesionario, es titular de todos los derechos de propiedad intelectual e industrial del Sitio Web, así como de los elementos contenidos en el mismo (a título enunciativo y no exhaustivo, imágenes, sonido, audio, vídeo, software o textos, marcas o logotipos, combinaciones de colores, estructura y diseño, selección de materiales usados, programas de ordenador necesarios para su funcionamiento, acceso y uso, etc.). Por tanto, serán obras protegidas como propiedad intelectual por el ordenamiento jurídico español, siendo aplicables tanto la normativa española y comunitaria en este campo, como los tratados internacionales relativos a la materia y suscritos por España. Todos los derechos reservados. En virtud de lo dispuesto en la Ley de Propiedad Intelectual, quedan expresamente prohibidas la reproducción, distribución y comunicación pública, incluida su modalidad de puesta a disposición, de la totalidad o parte de los contenidos de este sitio web, con fines comerciales, en cualquier soporte y por cualquier medio técnico, sin la autorización de Dz node. El Usuario se compromete a respetar los derechos de propiedad intelectual e industrial de Dz node. Podrá visualizar los elementos del Sitio Web o incluso imprimirlos, copiarlos y almacenarlos en el disco duro de su ordenador o en cualquier otro soporte físico siempre que sea exclusivamente para su uso personal. El Usuario, sin embargo, no podrá suprimir, alterar, o manipular ningún dispositivo de protección o sistema de seguridad que estuviera instalado en el Sitio Web. En caso de que el Usuario o un tercero considere que alguno de los Contenidos del Sitio Web constituye una violación de los derechos de protección de la propiedad intelectual, deberá comunicarlo inmediatamente a Dz node a través de los datos de contacto del apartado de INFORMACIÓN GENERAL de este Aviso Legal y Condiciones Generales de Uso."
+    },
+    "section6": {
+      "title": "VI. ACCIONES LEGALES, LEGISLACIÓN APLICABLE Y JURISDICCIÓN",
+      "content": "Dz node se reserva el derecho de ejercer las acciones civiles o penales que considere necesarias por el uso indebido del Sitio Web y Contenidos, o por el incumplimiento de estas Condiciones. La relación entre el Usuario y Dz node se regirá por la normativa vigente aplicable en territorio español. Si surgiera alguna controversia en relación con la interpretación y/o aplicación de estas Condiciones, las partes se someterán a la jurisdicción ordinaria, sometiéndose a los jueces y tribunales que correspondan conforme a la ley."
+    }
+  },
+  "privacy": {
+    "title": "Política de Privacidad",
+    "subtitle": "Cómo tratamos y protegemos tus datos personales",
+    "rights": "Todos los derechos reservados.",
+    "priv_protec": "I. POLÍTICA DE PRIVACIDAD Y PROTECCIÓN DE DATOS",
+    "priv_protec_text": "De acuerdo con la legislación vigente, Dz node (en adelante, también Sitio Web) se compromete a adoptar las medidas técnicas y organizativas necesarias, según el nivel de seguridad adecuado al riesgo de los datos recogidos.",
+    "section1": {
+      "title": "Leyes incorporadas en esta política de privacidad",
+      "content": "Esta política de privacidad se adapta a la normativa española y europea vigente sobre protección de datos personales en internet. En concreto, cumple con las siguientes normativas:",
+      "bullets": "<ul><li>Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo de 27 de abril de 2016 relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos (RGPD).</li><li>Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPD-GDD).</li><li>Real Decreto 1720/2007, de 21 de diciembre, por el que se aprueba el Reglamento de desarrollo de la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal (RDLOPD).</li><li>Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE).</li><li>Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE).</li></ul>"
+    },
+    "section2": {
+      "title": "Identidad del responsable del tratamiento de datos personales",
+      "content": "<ul><li>Dirección: - </li><li>Teléfono de contacto: 0034 608 477 693</li><li>Correo electrónico de contacto: hello@dznode.com</li></ul>"
+    },
+    "section3": {
+      "title": "Registro de datos personales",
+      "content": "En cumplimiento de lo dispuesto en el RGPD y la LOPD-GDD, te informamos que los datos personales recogidos por Dz node, a través de los formularios de sus páginas, serán incorporados y tratados en nuestro fichero con el fin de facilitar, agilizar y cumplir los compromisos establecidos entre Dz node y el Usuario o el mantenimiento de la relación establecida en los formularios que el Usuario rellene, o para responder a una solicitud o consulta. Asimismo, conforme a lo dispuesto en el RGPD y la LOPD-GDD, salvo que sea de aplicación la excepción prevista en el artículo 30.5 del RGPD, se mantiene un registro de actividades de tratamiento que especifica, según sus finalidades, las actividades de tratamiento realizadas y las demás circunstancias establecidas en el RGPD."
+    },
+    "section4": {
+      "title": "Principios aplicables al tratamiento de datos personales",
+      "content": "El tratamiento de los datos personales del Usuario se someterá a los siguientes principios recogidos en el artículo 5 del RGPD y el artículo 4 y siguientes de la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales:",
+      "bullets": "<ul><li>Principio de licitud, lealtad y transparencia: se requerirá en todo momento el consentimiento del Usuario previa información completamente transparente de los fines para los que se recogen los datos personales.</li><li>Principio de limitación de la finalidad: los datos personales serán recogidos para fines determinados, explícitos y legítimos.</li><li>Principio de minimización de datos: solo se recogerán los datos personales estrictamente necesarios en relación con los fines para los que son tratados.</li><li>Principio de exactitud: los datos personales deben ser exactos y estar siempre actualizados.</li><li>Principio de limitación del plazo de conservación: los datos personales solo serán mantenidos de forma que se permita la identificación del Usuario durante el tiempo necesario para los fines de su tratamiento.</li><li>Principio de integridad y confidencialidad: los datos personales serán tratados de manera que se garantice su seguridad y confidencialidad.</li><li>Principio de responsabilidad proactiva: el Responsable del tratamiento será responsable de asegurar que se cumplen los principios anteriores.</li></ul>"
+    },
+    "section5": {
+      "title": "Categorías de datos personales",
+      "content": "Las categorías de datos que se tratan en Dz node son únicamente datos identificativos. En ningún caso se tratan categorías especiales de datos personales en el sentido del artículo 9 del RGPD."
+    },
+    "section6": {
+      "title": "Base legal para el tratamiento de datos personales",
+      "content": "La base legal para el tratamiento de los datos personales es el consentimiento. Dz node se compromete a obtener el consentimiento expreso y verificable del Usuario para el tratamiento de sus datos personales para uno o varios fines específicos. El Usuario tiene derecho a retirar su consentimiento en cualquier momento. La retirada del consentimiento será tan fácil como otorgarlo. Como regla general, la retirada del consentimiento no condicionará el uso del Sitio Web. En ocasiones en las que el Usuario deba o pueda facilitar sus datos a través de formularios para realizar consultas, solicitar información o por motivos relacionados con el contenido del Sitio Web, se le informará si la cumplimentación de alguno de ellos es obligatoria porque son imprescindibles para el correcto desarrollo de la operación realizada."
+    },
+    "section7": {
+      "title": "Base legal para el tratamiento de datos personales",
+      "content": "La base legal para el tratamiento de los datos personales es el consentimiento. Dz node se compromete a obtener el consentimiento expreso y verificable del Usuario para el tratamiento de sus datos personales para uno o varios fines específicos. El Usuario tiene derecho a retirar su consentimiento en cualquier momento. La retirada del consentimiento será tan fácil como otorgarlo. Como regla general, la retirada del consentimiento no condicionará el uso del Sitio Web. En ocasiones en las que el Usuario deba o pueda facilitar sus datos a través de formularios para realizar consultas, solicitar información o por motivos relacionados con el contenido del Sitio Web, se le informará si la cumplimentación de alguno de ellos es obligatoria porque son imprescindibles para el correcto desarrollo de la operación realizada."
+    },
+    "section8": {
+      "title": "Finalidades del tratamiento de datos personales",
+      "content": "Los datos personales son recogidos y gestionados por Dz node con la finalidad de facilitar, agilizar y cumplir los compromisos establecidos entre el Sitio Web y el Usuario o el mantenimiento de la relación establecida en los formularios que este último rellene o para responder a una solicitud o consulta. Asimismo, los datos podrán ser utilizados con una finalidad comercial de personalización, operativa y estadística, y actividades propias del objeto social de Dz node, así como para la extracción, almacenamiento de datos y estudios de marketing para adecuar el Contenido ofrecido al Usuario, así como mejorar la calidad, funcionamiento y navegación del Sitio Web. En el momento en que se obtengan los datos personales, se informará al Usuario de la finalidad específica o finalidades para las que se tratarán los datos personales; es decir, el uso o usos que se dará a la información recogida."
+    },
+    "section9": {
+      "title": "Plazos de conservación de los datos personales",
+      "content": "Los datos personales solo serán conservados durante el tiempo mínimo necesario para los fines de su tratamiento y, en todo caso, únicamente durante el siguiente periodo: 24 meses, o hasta que el Usuario solicite su supresión. En el momento en que se obtengan los datos personales, se informará al Usuario del periodo durante el cual se conservarán los datos personales o, cuando esto no sea posible, los criterios utilizados para determinar este periodo."
+    },
+    "section10": {
+      "title": "Destinatarios de los datos personales",
+      "content": "Los datos personales del Usuario no serán compartidos con terceros. En todo caso, en el momento en que se obtengan los datos personales, se informará al Usuario de los destinatarios o categorías de destinatarios de los datos personales."
+    },
+    "section11": {
+      "title": "Datos personales de menores de edad",
+      "content": "De acuerdo con los artículos 8 del RGPD y 7 de la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales, solo las personas mayores de 14 años pueden otorgar válidamente su consentimiento para el tratamiento de sus datos personales por Dz node. Si el interesado es menor de 14 años, será necesario el consentimiento de los padres o tutores para el tratamiento, y este solo se considerará lícito en la medida en que los mismos lo hayan autorizado."
+    },
+    "section12": {
+      "title": "Secreto y seguridad de los datos personales",
+      "content": "Dz node se compromete a adoptar las medidas técnicas y organizativas necesarias, según el nivel de seguridad adecuado al riesgo de los datos recogidos, para garantizar la seguridad de los datos personales y evitar la destrucción, pérdida o alteración accidental o ilícita de los datos personales transmitidos, almacenados o tratados de otra forma, o la comunicación o acceso no autorizado a dichos datos. El Sitio Web cuenta con un certificado SSL (Secure Socket Layer), que asegura que los datos personales se transmiten de forma segura y confidencial, ya que la transmisión de datos entre el servidor y el Usuario, y en retroalimentación, es totalmente cifrada. Sin embargo, dado que Dz node no puede garantizar la invulnerabilidad absoluta de internet ni la ausencia total de hackers u otros que accedan de modo fraudulento a los datos personales, el Responsable del tratamiento se compromete a notificar al Usuario sin dilación indebida cuando ocurra una violación de la seguridad de los datos personales que sea probable que entrañe un alto riesgo para los derechos y libertades de las personas físicas. Conforme al artículo 4 del RGPD, se entiende por violación de la seguridad de los datos personales toda violación de la seguridad que provoque la destrucción, pérdida o alteración accidental o ilícita de los datos personales transmitidos, almacenados o tratados de otra forma, o la comunicación o acceso no autorizado a dichos datos. Los datos personales serán tratados como confidenciales por el Responsable del tratamiento, quien se compromete a informar y garantizar por obligación legal o contractual que dicha confidencialidad sea respetada por sus empleados, asociados y toda persona a la que haga accesible la información."
+    },
+    "section13": {
+      "title": "Derechos derivados del tratamiento de datos personales",
+      "content": "El Usuario tiene sobre Dz node y podrá, por tanto, ejercer frente al Responsable del tratamiento los siguientes derechos reconocidos en el RGPD y la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales:",
+      "bullets": "<ul><li>Derecho de acceso: Derecho del Usuario a obtener confirmación de si Dz node está tratando sus datos personales y, en caso afirmativo, obtener información sobre sus datos personales concretos y el tratamiento que Dz node haya realizado o realice, así como, entre otras cosas, la información disponible sobre el origen de dichos datos y los destinatarios de las comunicaciones realizadas o previstas de los mismos.</li><li>Derecho de rectificación: Derecho del Usuario a que se modifiquen sus datos personales que resulten ser inexactos o, teniendo en cuenta los fines del tratamiento, incompletos.</li><li>Derecho de supresión (“el derecho al olvido”): Derecho del Usuario, salvo que la legislación vigente disponga lo contrario, a obtener la supresión de sus datos personales cuando ya no sean necesarios para los fines para los que fueron recogidos o tratados; el Usuario haya retirado su consentimiento al tratamiento y no exista otro fundamento jurídico; el Usuario se oponga al tratamiento y no exista otro motivo legítimo para continuar con el mismo; los datos personales hayan sido tratados ilícitamente; los datos personales deban suprimirse en cumplimiento de una obligación legal; o los datos personales hayan sido obtenidos como resultado de una oferta directa de servicios de la sociedad de la información a un menor de 14 años. Además de suprimir los datos, el Responsable del tratamiento, teniendo en cuenta la tecnología disponible y el coste de su implementación, deberá adoptar medidas razonables para informar a los responsables que estén tratando los datos personales de la solicitud del interesado de supresión de cualquier enlace a esos datos personales.",
+      "content2": "Así, el Usuario podrá ejercer sus derechos mediante comunicación escrita dirigida al Responsable del tratamiento con la referencia “RGPD-https://www.dznode.com/“, especificando:",
+      "bullets2": "<ul><li>Nombre, apellidos del Usuario y copia del DNI. En los casos en que se acepte la representación, será también necesaria la identificación por el mismo medio de la persona que representa al Usuario, así como el documento acreditativo de la representación. La fotocopia del DNI podrá ser sustituida por cualquier otro medio válido en derecho que acredite la identidad.</li><li>Petición con los motivos específicos de la solicitud o información a la que se quiere acceder.</li><li>Domicilio a efectos de notificaciones.</li><li>Fecha y firma del solicitante.</li><li>Todo documento que acredite la petición que formula.</li><li>Esta solicitud y cualquier otro documento adjunto podrá enviarse a la siguiente dirección de correo electrónico: hello@dznode.com</li></ul>"
+    },
+    "section14": {
+      "title": "Enlaces a sitios web de terceros",
+      "content": "El Sitio Web puede incluir hipervínculos o enlaces que permiten acceder a sitios web de terceros distintos de Dz node, y que por tanto no son operados por Dz node. Los titulares de dichos sitios web tendrán sus propias políticas de protección de datos, y ellos mismos serán responsables de sus propios ficheros y de sus propias prácticas de privacidad."
+    },
+    "section15": {
+      "title": "Reclamaciones ante la autoridad de control",
+      "content": "Si el Usuario considera que existe un problema o infracción de la normativa vigente en la forma en que se están tratando sus datos personales, tiene derecho a la tutela judicial efectiva y a presentar una reclamación ante una autoridad de control, en particular, en el Estado en el que tenga su residencia habitual, lugar de trabajo o lugar de la supuesta infracción. En el caso de España, la autoridad de control es la Agencia Española de Protección de Datos (http://www.agpd.es)."
+    },
+    "changePrivacy": {
+      "title": "II. ACEPTACIÓN Y CAMBIOS EN ESTA POLÍTICA DE PRIVACIDAD",
+      "content": "Es necesario que el Usuario haya leído y esté conforme con las condiciones sobre protección de datos personales contenidas en esta Política de Privacidad, así como que acepte el tratamiento de sus datos personales para que el Responsable del tratamiento pueda proceder al mismo en la forma, durante los plazos y para las finalidades indicadas. El uso del Sitio Web implicará la aceptación de su Política de Privacidad. Dz node se reserva el derecho a modificar su Política de Privacidad, según su propio criterio, o motivado por un cambio legislativo, jurisprudencial o doctrinal de la Agencia Española de Protección de Datos. Los cambios o actualizaciones de esta Política de Privacidad no serán notificados explícitamente al Usuario. Se recomienda al Usuario consultar esta página periódicamente para estar al tanto de los últimos cambios o actualizaciones. Esta Política de Privacidad fue actualizada para adaptarse al Reglamento (UE) 2016/679 del Parlamento Europeo y del Consejo de 27 de abril de 2016 relativo a la protección de las personas físicas en lo que respecta al tratamiento de datos personales y a la libre circulación de estos datos (RGPD) y la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales."
+    }
   }
 }

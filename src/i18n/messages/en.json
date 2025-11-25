@@ -1,6 +1,6 @@
 {
   "home": {
-    "title": "Hola mundo!"
+    "title": "Dz node"
   },
   "navigation": {
     "navigate": "Navigate",
@@ -60,8 +60,8 @@
     {
       "title": "Product",
       "description":
-        "We analyze your business to implement precise products that adapt to your needs. End-to-end process, from the initial study to the deployment in production and its later maintenance.",
-      "descLong": "We transform business needs into clear, functional, and scalable digital products. From the initial discovery phase to design, development, deployment, and ongoing maintenance, we manage the entire product lifecycle with a focus on usability, reliability, and long-term growth. Our goal is to deliver solutions that not only work—but work for you.",
+        "We analyze your business to implement precise web applications that adapt to your needs. End-to-end process, from the initial study to the deployment in production and its later maintenance.",
+      "descLong": "We transform business needs into clear, functional, and scalable web applications. From the initial discovery phase to design, development, deployment, and ongoing maintenance, we manage the entire product lifecycle with a focus on usability, reliability, and long-term growth. Our goal is to deliver solutions that not only work—but work for you.",
       "qualities": [
         "UX/UI Design",
         "User Testing",
@@ -122,7 +122,7 @@
     }
   },
   "outro": {
-    "title": "LET'S BRING YOUR IDEAS TO LIFE"
+    "title": "YOUR PROJECT DESERVES TO STAND OUT"
   },
   "CTA": {
     "title": "Ready to transform your business?",

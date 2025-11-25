@@ -49,7 +49,7 @@ export default function Intro() {
             {t("design1")}
           </p>
           <p>
-            {t("design1")}
+            {t("design2")}
           </p>
         </div>
       </div>

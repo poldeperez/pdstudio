@@ -115,7 +115,7 @@ export function useHeaderAnimation() {
             }
             function handleEnter() {
                 gsap.to(menuBg, {
-                    width: 450,
+                    width: 500,
                     paddingLeft: 24,
                     paddingRight: 24,
                     duration: 0.4,
